@@ -11,35 +11,30 @@ import java.util.Map;
 
 public class MultichatServer {
  
-    // ´ëÈ­¸í, Å¬¶óÀÌ¾ğÆ® OutputStream ÀúÀå¿ë ´ëÈ­¹æ(HashMap) Á¤ÀÇ
+    //creat map to save user_name, client's outputstream
      Map<String, DataOutputStream> clients; 
      Data data[] = new Data[10];
      
      int data_num = 0;
      int q_num = 0;
-    // »ı¼ºÀÚ 
+
     MultichatServer() { 
         clients = Collections.synchronizedMap( //
                  new HashMap<String, DataOutputStream>());
      } 
 
-    // ºñÁî´Ï½º ·ÎÁ÷À» Ã³¸®ÇÏ´Â ¸Ş¼­µå 
     public void start() {
          ServerSocket serverSocket = null; 
         Socket socket = null; 
 
         try { 
-            // 7777 Æ÷Æ®¿¡ ¹ÙÀÎµùµÈ ¼­¹ö ¼ÒÄÏ »ı¼º 
             serverSocket = new ServerSocket(7779);
-   //         sendToAll("¼­¹ö°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù.");
  
             while (true) { 
-                // Å¬¶óÀÌ¾ğÆ® Á¢¼Ó ´ë±â accept() 
+                // Waiting for client access. accept() 
                 socket = serverSocket.accept(); 
-     //           sendToAll("[" + socket.getInetAddress() // 
-         //                + ":" + socket.getPort() + "]" + "¿¡¼­ Á¢¼ÓÇÏ¿´½À´Ï´Ù.");
- 
-                // ¼­¹ö¿¡¼­ Å¬¶óÀÌ¾ğÆ®·Î ¸Ş½ÃÁö¸¦ Àü¼ÛÇÒ Thread »ı¼º
+
+                // creat Thread  (server -> client)
                  ServerReceiver thread = new ServerReceiver(socket);
                  thread.start(); 
 
@@ -50,45 +45,30 @@ public class MultichatServer {
         } finally { 
             SocketUtil.close(serverSocket); 
         } 
-    } // start() 
-
-    // ´ëÈ­¹æ¿¡ ÀÖ´Â ÀüÃ¼ À¯Àú¿¡°Ô ¸Ş½ÃÁö Àü¼Û 
+    } 
+    // Send a message to all users  
     void sendToAll(String msg) { 
-        // ´ëÈ­¹æ¿¡ Á¢¼ÓÇÑ À¯ÀúÀÇ ´ëÈ­¸í ¸®½ºÆ® ÃßÃâ 
+        // Extract list of connected users
         Iterator<String> it = clients.keySet().iterator(); 
 
         while (it.hasNext()) { 
             try { 
             	
-/*           	 String m;
-             String message2 = msg;
-             m = message2.substring(message2.indexOf(' ')+1, message2.indexOf('/'));
-        	 System.out.println(m+"---"+message2);
-     		 String str_buf = message2.substring(message2.indexOf("°ø°¨")+3);
-     		 int q_n = Integer.parseInt(str_buf)+1;
-     		*/
-     		 /*data[data_num].q = m;
-     		 data[data_num].q_num = q_n;
-        	 System.out.println(data[data_num].q+"======"+data[data_num].q_num);
-        	 data_num++;
-        	 System.out.println(data_num);
-*/            	
-            	
-            	//
+
                 String name = it.next(); 
                 DataOutputStream out = clients.get(name); 
                 out.writeUTF(msg); 
             } catch (IOException e) { 
             } 
-        } // while 
-    } // sendToAll 
+        } 
+    } 
 
     public static void main(String[] args) {
          new MultichatServer().start(); 
     } 
 
-    // Inner Class·Î Á¤ÀÇ ÇÏ¿©, ´ëÈ­¹æ field¿¡ Á¢±Ù ÇÒ ¼ö ÀÖµµ·Ï ÇÑ´Ù. 
-     // ¼­¹ö¿¡¼­ Å¬¶óÀÌ¾ğÆ®·Î ¸Ş½ÃÁö¸¦ Àü¼ÛÇÒ Thread 
+ 
+     // Thread (server -> client)
     class ServerReceiver extends Thread {
          Socket socket; 
         DataInputStream in; 
@@ -97,10 +77,10 @@ public class MultichatServer {
         ServerReceiver(Socket socket) { 
             this.socket = socket; 
             try { 
-                // Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏ¿¡¼­ µ¥ÀÌÅÍ¸¦ ¼ö½Å¹Ş±â À§ÇÑ InputStream »ı¼º
+                // creat InputStream to receive
                  in = new DataInputStream(socket.getInputStream());
                   
-                // Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏ¿¡¼­ µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÏ±â À§ÇÑ OutputStream »ı¼º
+                // creat OutputStream to send
                  out = new DataOutputStream(socket.getOutputStream());
              } catch (IOException e) { 
             } 
@@ -109,17 +89,12 @@ public class MultichatServer {
         public void run() {
              String name = ""; 
             try { 
-                // ¼­¹ö¿¡¼­´Â ÃÖÃÊ¿¡ Å¬¶óÀÌ¾ğÆ®°¡ º¸³½ ´ëÈ­¸íÀ» ¹Ş¾Æ¾ß ÇÑ´Ù. 
+                // The server first receive a name from the client.
                  name = in.readUTF(); 
                  
-                // ´ëÈ­¸íÀ» ¹Ş¾Æ, Àü¿¡ Å¬¶óÀÌ¾ğÆ®¿¡°Ô ´ëÈ­¹æ Âü¿© ¸Ş½ÃÁö¸¦ º¸³½´Ù. 
-          //       sendToAll("#" + name + "´ÔÀÌ µé¾î¿À¼Ì½À´Ï´Ù.");
- 
-                // ´ëÈ­¸í, Å¬¶óÀÌ¾ğ·Î ¸Ş½ÃÁö¸¦ º¸³¾ ¼ö ÀÖ´Â OutputStream °´Ã¼¸¦
-                 // ´ëÈ­¹æ Map¿¡ ÀúÀåÇÑ´Ù.  
+                 // store client information on Map  
                 clients.put(name, out); 
-          //      sendToAll("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â " + clients.size() + "ÀÔ´Ï´Ù.");
-                // Å¬¶óÀÌ¾ğÆ®°¡ Àü¼ÛÇÑ ¸Ş½ÃÁö¸¦ ¹Ş¾Æ, Àü¿¡ Å¬¶óÀÌ¾ğÆ®¿¡°Ô ¸Ş½ÃÁö¸¦ º¸³½´Ù. 
+               // Send the received message to all clients
                  while (in != null) { 
 
                      sendToAll(in.readUTF()); 
@@ -128,15 +103,13 @@ public class MultichatServer {
             } catch (IOException e) { 
                 // ignore 
             } finally { 
-                // finallyÀıÀÌ ½ÇÇàµÈ´Ù´Â °ÍÀº Å¬¶óÀÌ¾ğÆ®°¡ ºüÁ®³ª°£ °ÍÀ» ÀÇ¹ÌÇÑ´Ù. 
-          //       sendToAll("#" + name + "´ÔÀÌ ³ª°¡¼Ì½À´Ï´Ù.");
+ e
                   
-                // ´ëÈ­¹æ¿¡¼­ °´Ã¼ »èÁ¦ 
+                // remove client object
                 clients.remove(name); 
                 System.out.println("[" + socket.getInetAddress() //
-                         + ":" + socket.getPort() + "]" + "¿¡¼­ Á¢¼ÓÀ» Á¾·áÇÏ¿´½À´Ï´Ù.");
-         //        sendToAll("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â " + clients.size() + "ÀÔ´Ï´Ù.");
-             } // try 
-        } // run 
-    } // ReceiverThread 
-} // class 
+                         + ":" + socket.getPort() + "]" + "ì—ì„œ ì ‘ì†ì„ ì¢…ë£Œí•˜ì˜€ìŠµë‹ˆë‹¤.");
+             } 
+        } 
+    } 
+}
