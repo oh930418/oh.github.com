@@ -33,9 +33,7 @@ class Survey extends JFrame{
 		scrollBACK = new BACKPanel(x, y);
 		JPanel passW = new MyPanel(11, x, y, cardLayoutSet, m_P, jf);
 		JPanel starting1 = new MyPanel(1, x, y, cardLayoutSet, m_P, jf);
-		//JPanel starting2 = new JPanel();
 		JPanel starting2 = new MyPanel(2, x, y, cardLayoutSet, m_P, jf);
-		//JPanel starting3 = new MyPanel(3, x, y, cardLayoutSet, m_P, jf);
 		JPanel starting3 = new JPanel();
 		JPanel starting4 = new MyPanel(4, x, y, cardLayoutSet, m_P, jf);
 		JPanel starting5 = new MyPanel(5, x, y, cardLayoutSet, m_P, jf);
@@ -48,31 +46,17 @@ class Survey extends JFrame{
 		jp_label.setLayout(new GridBagLayout());  
 		jp_label.setBackground(Color.WHITE);
 
-		Dimension size = new Dimension();//»çÀÌÁî¸¦ ÁöÁ¤ÇÏ±â À§ÇÑ °´Ã¼ »ı¼º
-		size.setSize(500, 1940);//°´Ã¼ÀÇ »çÀÌÁî¸¦ ÁöÁ¤
+		Dimension size = new Dimension();//ì‚¬ì´ì¦ˆë¥¼ ì§€ì •í•˜ê¸° ìœ„í•œ ê°ì²´ ìƒì„±
+		size.setSize(500, 1940);//ê°ì²´ì˜ ì‚¬ì´ì¦ˆë¥¼ ì§€ì •
 		jp_label.setPreferredSize(size);
  
 
-		scroll = new JScrollPane(jp_label);  // ½ºÅ©·ÑÆĞ³ÎÀ» ¼±¾ğ
-		scroll.setBounds(x/2-315, y/2-155, 630, 350);    // ÇÁ·¹ÀÓ¿¡ ½ºÅ©·ÑÆĞ³ÎÀÇ À§Ä¡¸¦ Á¤ÇÑ´Ù
-		//scrollBACK.add(scroll);
-		//scrollBACK.setVisible(false);
-		
-		//m_P.add(scroll, "s3");
+		scroll = new JScrollPane(jp_label);  // ìŠ¤í¬ë¡¤íŒ¨ë„ì„ ì„ ì–¸
+		scroll.setBounds(x/2-315, y/2-155, 630, 350);    // í”„ë ˆì„ì— ìŠ¤í¬ë¡¤íŒ¨ë„ì˜ ìœ„ì¹˜ë¥¼ ì •í•œë‹¤
+
 	
 		scroll.getVerticalScrollBar().setUnitIncrement(16);
-		//
-/*		JScrollPane jScrollPane = new JScrollPane();//½ºÅ©·ÑÆÒ »ı¼º
-		JPanel panel_ex = new MySPanel(x, y);//½ºÅ©·ÑÆÒ¿¡ ºÙÀÏ ÆĞ³Î »ı¼º
-		Dimension size = new Dimension();//»çÀÌÁî¸¦ ÁöÁ¤ÇÏ±â À§ÇÑ °´Ã¼ »ı¼º
-		size.setSize(704, 2942);//°´Ã¼ÀÇ »çÀÌÁî¸¦ ÁöÁ¤
-		panel_ex.setPreferredSize(size);//»çÀÌÁî Á¤º¸¸¦ °¡Áö°í ÀÖ´Â °´Ã¼¸¦ ÀÌ¿ëÇØ ÆĞ³ÎÀÇ »çÀÌÁî ÁöÁ¤
-		jScrollPane.setViewportView(panel_ex);//½ºÅ©·Ñ ÆÒ À§¿¡ ÆĞ³ÎÀ» ¿Ã¸°´Ù.
-		//starting2.add(jScrollPane);
-		//starting2.setBackground(new Color(201, 205, 208));
-		jScrollPane.setBackground(new Color(201, 205, 208));
-		jScrollPane.getVerticalScrollBar().setUnitIncrement(16); */
-//
+
 		Snext_btn.addActionListener(new ActionListener(){
 
 			@Override
@@ -84,11 +68,10 @@ class Survey extends JFrame{
 			
 			
 		});
-//
+
 		m_P.add(starting1, "s1");
 		m_P.add(starting2, "s2");
-		//m_P.add(jScrollPane, "s3");
-		//m_P.add(starting2, "s2");
+
 		m_P.add(starting4, "s4");
 		m_P.add(starting5, "s5");
 		m_P.add(mid, "mid");
@@ -106,8 +89,7 @@ class Survey extends JFrame{
 	    JButton next_btn;
 	    
 	    public MyPanel(int num, int screan_x, int screan_y, CardLayout cardLayoutSet, JPanel m_P, JFrame jf){
-	/*    	int x2 = (int) (screan_x*0.5)+180;
-	    	int y2 = (int) (screan_y*0.5)+50;*/
+
 	    	int x2 = (int) (screan_x*0.5)+180;
 	    	int y2 = (int) (screan_y*0.5)+120;
 	    	x = screan_x;
@@ -122,10 +104,6 @@ class Survey extends JFrame{
 				JTextField na = new JTextField();
 				
 				add(na);
-				/*next_btn.setBorderPainted(false);
-				next_btn.setFocusPainted(false);
-				next_btn.setContentAreaFilled(false);
-				next_btn.setForeground(Color.BLACK);*/
 			}
 			if(num == 1){
 				next_btn = new JButton("");
@@ -179,8 +157,7 @@ class Survey extends JFrame{
 						JLabel limg = new JLabel(new ImageIcon("JOPIC/srcoll.jpg"));
 						JLabel limg2 = new JLabel("");
 						limg2.setBounds(0, 10, 720, 450);
-						//jf.add(limg2);
-						//limg.setBounds(0, 10, 720, 450);
+
 						limg.setBounds(x/2-360, y/2-225, 720, 450);
 						jf.add(limg);
 						
@@ -190,10 +167,7 @@ class Survey extends JFrame{
 						al.setBackground(new Color(201, 205, 208));
 						al.setBounds(0, 0, 10000, 10000);
 						jf.add(al);
-						//jf.setBackground(Color.black);
-						
-						
-						//jf.setBackground(Color.BLACK);
+
 						m_P.setVisible(false);
 						scroll.updateUI();
 						jf.repaint();
@@ -219,15 +193,14 @@ class Survey extends JFrame{
 	    	
 	    }
 	    
-	    public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+	    public void paintComponent(Graphics g){//ê·¸ë¦¼ì´ë‚˜ ë„í˜•ì„ ë„£ì„ë•Œ ê¸°ë³¸ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” í˜ì¸íŠ¸ì»´í¬ë„ŒíŠ¸
 	       super.paintComponent(g);
 	       
-	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
+	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);//(ì´ë¯¸ì§€, ìœ„ì¹˜x, ìœ„ì¹˜y, í¬ê¸°x, í¬ê¸°y, this)
 	     
 	    }
 	 }
 	class MySPanel extends JPanel {
-		//JButton Snext_btn;
 		ImageIcon image1 = new ImageIcon();
 		Image img1;
 	    int x, y;
@@ -261,11 +234,10 @@ class Survey extends JFrame{
 
 	    }
 	    
-	    public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+	    public void paintComponent(Graphics g){//ê·¸ë¦¼ì´ë‚˜ ë„í˜•ì„ ë„£ì„ë•Œ ê¸°ë³¸ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” í˜ì¸íŠ¸ì»´í¬ë„ŒíŠ¸
 	       super.paintComponent(g);
-	       g.drawImage(img1, 0, 0, 571, 1935, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
+	       g.drawImage(img1, 0, 0, 571, 1935, this);//(ì´ë¯¸ì§€, ìœ„ì¹˜x, ìœ„ì¹˜y, í¬ê¸°x, í¬ê¸°y, this)
 
-	      // Snext_btn.setBounds(x/2+200, 2622, 150, 50);
 	          Snext_btn.setBounds(480, 1865, 150, 50);
 
 	    	image1 = new ImageIcon("JOPIC/survey.jpg");
@@ -287,9 +259,9 @@ class Survey extends JFrame{
 
 	    }
 	    
-	    public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+	    public void paintComponent(Graphics g){//ê·¸ë¦¼ì´ë‚˜ ë„í˜•ì„ ë„£ì„ë•Œ ê¸°ë³¸ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” í˜ì¸íŠ¸ì»´í¬ë„ŒíŠ¸
 	       super.paintComponent(g);
-	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
+	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);//(ì´ë¯¸ì§€, ìœ„ì¹˜x, ìœ„ì¹˜y, í¬ê¸°x, í¬ê¸°y, this)
 
 	       
 	    }
