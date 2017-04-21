@@ -33,27 +33,22 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
-/** 
- * // ½ÇÇà ¹æ¹ı // java MultichatGUIClient ´ëÈ­¸í 
- *  
- * @since 2012. 07. 11. 
- * @author yanggun7201 
- */ 
+
 public class MultichatGUIClient_final extends JPanel implements ActionListener {
-    Frame startf;//½ÃÀÛÇÁ·¹ÀÓ
-    Frame f; //µ¿ÀÛÇÁ·¹ÀÓ
+    Frame startf;//start frame
+    Frame f; //Activity frame
     String user; 
-    MyPanel back; //¹è°æÆĞ³Î
-    JPanel q_list; //Áú¹®Ç×¸ñ ¸®½ºÆ®
-    loginPanel login = new loginPanel(); //·Î±×ÀÎÇÏ´Â ÆĞ³Î  
-    Button logbt;//·Î±×ÀÎ¹öÆ°
-    Button b1;//ÀÔ·Â¹öÆ° 
-    Button b2;//Ãë¼Ò¹öÆ°   
+    MyPanel back; //background panel
+    JPanel q_list; //question list
+    loginPanel login = new loginPanel(); //login panel  
+    Button logbt;//login button
+    Button b1;//enter button
+    Button b2;// cancel botton 
     TextField tf; 
     TextField tf2;
     JTextArea ta;  
-    TextArea ta2;//Ã¤ÆÃÃ¢  
-    JTextField na;//ÀÌ¸§ ÀÔ·Â°ø°£
+    TextArea ta2;//chatting
+    JTextField na;//name text field
     
     String Q_s[] = new String[100];
     int Q_i[] = new int[100];
@@ -63,26 +58,25 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
     String name;
     
     ClientSender sender;
-    JScrollPane scroll;//½ºÅ©·Ñ
-    //JScrollPane scroll2;//½ºÅ©·Ñ
+    JScrollPane scroll;//scroll
     // =============================== 
 
     public MultichatGUIClient_final(String name) { 
         // =============================== 
         this.name = name; 
-        //===ÇÁ·¹ÀÔºÎºĞ===
+        //frame
         f = new Frame(name);
         f.setSize(400, 955);
-        //===½ÃÀÛÇÁ·¹ÀÓºÎºĞÀÔ´Ï´Ù.===
+      
         startf = new Frame();
         startf.setSize(315, 437);
-        //===Áú¹®/Ã¤ÆÃ µ¿ÀÛÆĞ³ÎÀÔ´Ï´Ù.===
+        //===Activity panel===
         back = new MyPanel();
         back.setLayout(null);
-        //Áú¹®¹öÆ°ÀÌ ¿Ã¶ó°¡´Â ÆĞ³ÎÀÔ´Ï´Ù. ¸®½ºÆ® Å©±âÀÔ´Ï´Ù. ÃÖ´ë 100ÁÙ
+        //The panel where the question button goes up. The size of the list. Up to 100 lines
         q_list = new JPanel(new GridLayout(100,1));
         q_list.setBackground(Color.white);            
-        //==========½ºÅ©·ÑºÎºĞ=============
+        //==========scroll=============
         scroll = new JScrollPane(q_list);  
         scroll.setBounds(15,300,350,170);
         scroll.setBackground(Color.white);
@@ -92,25 +86,23 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
         tf = new TextField(50);
         tf.setBounds(15,810,350,25);
      
-        //===Àü¼Û¹öÆ°ºÎºĞÀÔ´Ï´Ù.===
-        b1 = new Button("Àü¼Û");
+        //===transmit botton.===
+        b1 = new Button("ì „ì†¡");
         b1.setBounds(15,855,130,40);  
         b1.setBackground(Color.white);
-        //===Ãë¼Ò¹öÆ°ºÎºĞÀÔ´Ï´Ù.===
-        b2 = new Button("Ãë¼Ò");
+        //===cancel button.===
+        b2 = new Button("ì·¨ì†Œ");
         b2.setBounds(235,855,130,40);
         b2.setBackground(Color.white);
         
-        //Áú¹®ÀÔ·Â°ø°£=================================================
-        ta = new JTextArea(tf.getText(), 20, 50);//µé¾î°¥ ÅØ½ºÆ®, »çÀÌÁî ,»çÀÌÁî
-        //Çà ³Ñ±â±â ±â´É ÄÑ±â
+        //question textfield================================================
+        ta = new JTextArea(tf.getText(), 20, 50);//ë“¤ì–´ê°ˆ í…ìŠ¤íŠ¸, ì‚¬ì´ì¦ˆ ,ì‚¬ì´ì¦ˆ
         ta.setLineWrap(true);
-        //Çà ³Ñ±æ ¶§ ÇàÀÇ ¸¶Áö¸· ´Ü¾î°¡ µÎÇà¿¡ °ÉÃÄ ³ª´µÁö ¾Êµµ·Ï ÇÏ±â
         ta.setWrapStyleWord(true);
         //=============================================================
         
-        //===Ã¤ÆÃ»ğÀÔ°ø°£ÀÔ´Ï´Ù.===
-        ta2 = new TextArea(20, 50);//µé¾î°¥ ÅØ½ºÆ®, »çÀÌÁî ,»çÀÌÁî
+        //===chatting textArea.===
+        ta2 = new TextArea(20, 50);
         ta2.setBounds(15,620,350,170);
         ta2.setBackground(Color.white);
         //==========================================================
@@ -142,8 +134,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
          b2.addActionListener(new ActionListener(){
 
             public void actionPerformed(ActionEvent arg0) {
-               // TODO Auto-generated method stub
-               //System.out.println("Ãë¼Ò ´­·È´Ù!!");
+
                  tf.setText(" ");
                  tf.requestFocus();
                  
@@ -160,20 +151,19 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
             } 
         }); 
 
-        //Ã³À½ ½ÃÀÛ½Ã º¸¿©ÁÖ´Â ÆĞ³ÎÀº ½ºÅ¸Æ®ÆĞ³ÎÀÔ´Ï´Ù.
         startf.setVisible(true); 
 
         // =================================================
          Socket socket = null; 
         try { 
             String serverIp = "128.0.0.1"; 
-            socket = new Socket(serverIp, 7779); // ¼ÒÄÏÀ» »ı¼ºÇÏ¿© ¿¬°áÀ» ¿äÃ»ÇÑ´Ù.
-            System.out.println("¼­¹ö¿¡ ¿¬°áµÇ¾ú½À´Ï´Ù.");
+            socket = new Socket(serverIp, 7779); // Create a socket to request a connection.
+            System.out.println("ì„œë²„ì— ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
  
-            // ¸Ş½ÃÁö Àü¼Û¿ë Thread »ı¼º 
+            // creat send message Thread   
             sender = new ClientSender(socket);
  
-            // ¸Ş½ÃÁö ¼ö½Å¿ë Thread »ı¼º 
+            // creat receive message Thread 
             Thread receiver = new Thread(new ClientReceiver(socket));
  
             receiver.start(); 
@@ -214,7 +204,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
 
         m = message2.substring(message2.indexOf(' ')+1, message2.indexOf('/'));
              
-       String str_buf = message2.substring(message2.indexOf("°ø°¨")+3);
+       String str_buf = message2.substring(message2.indexOf("ê³µê°")+3);
        int q_n = Integer.parseInt(str_buf);
            
         System.out.println("-------------");   
@@ -226,7 +216,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
               String message2 = btn.getLabel();
               m = message2.substring(message2.indexOf(' ')+1, message2.indexOf('/'));              
 
-              String str_buf = message2.substring(message2.indexOf("°ø°¨")+3);
+              String str_buf = message2.substring(message2.indexOf("ê³µê°")+3);
               int q_n = Integer.parseInt(str_buf)+1;
               data.q_num = q_n;
               
@@ -235,9 +225,9 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                  Data data_b = new Data();
                  data_b.q = Q_s[i];
                  data_b.q_num = Q_i[i];
-                 System.out.println("°ø°¨Å¬¸¯ " + (i+1) + "¹øÂ° ¹è¿­µ¥ÀÌÅÍ Àü¼Û");
+                 System.out.println("ê³µê°í´ë¦­ " + (i+1) + "ë²ˆì§¸ ë°°ì—´ë°ì´í„° ì „ì†¡");
                  if((":"+m).equalsIgnoreCase(Q_s[i])){
-                    System.out.println(data_b.q + data_b.q_num + "°ø°¨+ Àü¼Û");
+                    System.out.println(data_b.q + data_b.q_num + "ê³µê°+ ì „ì†¡");
                     //System.out.println();
 
                     //data_b.q =  ":"+data_b.q.substring();
@@ -245,9 +235,9 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                     sender.send(data_b); 
                  }
                  else {
-                    System.out.println(data.q +"_"+ Q_s[i]+ "-----------------Àü¼Û");
+                    System.out.println(data.q +"_"+ Q_s[i]+ "-----------------ì „ì†¡");
 
-                    System.out.println(data_b.q + data_b.q_num + "Àü¼Û");
+                    System.out.println(data_b.q + data_b.q_num + "ì „ì†¡");
                     data_b.q = Q_s[i];
 
                     sender.send(data_b);                     
@@ -325,8 +315,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
     }
  
     // ===============================================================================
-     // ¸Ş½ÃÁö Àü¼Û¿ë °´Ã¼  
-    // Thread ¾Æ´Ô!!! (GUI ¹öÀüÀÌ¹Ç·Î, Event¸¦ ¹Ş¾Æ¼­ Ã³¸®ÇÔ)
+     //Object for message transfer  
      class ClientSender { 
         Socket socket; 
         DataOutputStream out; 
@@ -336,7 +325,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
 
             try { 
                 this.out = new DataOutputStream(socket.getOutputStream());
-                // ½ÃÀÛÇÏÀÚ ¸¶ÀÚ, ÀÚ½ÅÀÇ ´ëÈ­¸íÀ» ¼­¹ö·Î Àü¼Û 
+                // Send own name at startup
                 if (out != null) {
                      out.writeUTF(name); 
                 } 
@@ -352,13 +341,13 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                      m = data.q;
                      
                      int q_n = data.q_num;
-                     System.out.println(data.q+"ÃÊ±â ÀÔ·Â");
+                     System.out.println(data.q+"ì´ˆê¸° ì…ë ¥");
                      if(data.q.substring(0,1).equalsIgnoreCase(":") ){
-                         out.writeUTF(" " + data.q + "/ °ø°¨ " + data.q_num);
+                         out.writeUTF(" " + data.q + "/ ê³µê° " + data.q_num);
                      }
                      else{ 
-                        //out.writeUTF(" "+ data.q + "/ °ø°¨ " + data.q_num);
-                        out.writeUTF(" [" + user + "] : " + data.q + "/ °ø°¨ " + data.q_num);
+                        //out.writeUTF(" "+ data.q + "/ ê³µê° " + data.q_num);
+                        out.writeUTF(" [" + user + "] : " + data.q + "/ ê³µê° " + data.q_num);
                      }
                  } catch (IOException e) { 
                 } 
@@ -366,16 +355,16 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
         } 
     } 
 
-    // ¸Ş½ÃÁö ¼ö½Å¿ë Thread 
+    // ë©”ì‹œì§€ ìˆ˜ì‹ ìš© Thread 
     class ClientReceiver implements Runnable {
          Socket socket; 
         DataInputStream in; 
-        // »ı¼ºÀÚ 
+        // ìƒì„±ì 
         ClientReceiver(Socket socket) { 
             this.socket = socket; 
 
             try { 
-                // ¼­¹ö·Î ºÎÅÍ µ¥ÀÌÅÍ¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï DataInputStream »ı¼º
+                // ì„œë²„ë¡œ ë¶€í„° ë°ì´í„°ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ DataInputStream ìƒì„±
                  this.in = new DataInputStream(socket.getInputStream());
              } catch (IOException e) { 
             } 
@@ -383,7 +372,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
         public void run() {
              while (in != null) { 
                 try { 
-                    // ¼­¹ö·Î ºÎÅÍ Àü¼ÛµÇ´Â µ¥ÀÌÅÍ¸¦ Ãâ·Â 
+                    // Outputs data transmitted from the server 
                    Data data = new Data();
                    data.q = in.readUTF();
                    
@@ -410,7 +399,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                               Q_s[i] = null;
                               Q_i[i] = 0;
                           }
-                         System.out.println("¼±»ı´Ô ÀüÃ¼ »èÁ¦");
+                         System.out.println("ì„ ìƒë‹˜ ì „ì²´ ì‚­ì œ");
 
                           data_num = 0;
                          continue;
@@ -418,9 +407,8 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                       if(m.indexOf("CLEAR")==0){
                           q_list.removeAll();
                            String str_buf = m.substring(m.indexOf("R")+1);
-                        //   data_num = Integer.parseInt(str_buf)-1;
                            data_num = 0;
-                           System.out.println("clear µÈ¼ö Áú¹®¼ö : " + data_num);
+                           System.out.println("clear ëœìˆ˜ ì§ˆë¬¸ìˆ˜ : " + data_num);
                            for(int i = 0; i<100; i++){
                                Q_s[i] = null;
                                Q_i[i] = 0;
@@ -429,29 +417,29 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
    
                       else {
         
-                         String str_buf = message2.substring(message2.indexOf("°ø°¨")+3);
+                         String str_buf = message2.substring(message2.indexOf("ê³µê°")+3);
                           int q_n = Integer.parseInt(str_buf);
                           int buf=data_num;
 
 
                           
-                          System.out.println(m+"ÇöÁ¦ ÀÔ·ÂµÈ ¹®ÀÚ");
+                          System.out.println(m+"í˜„ì œ ì…ë ¥ëœ ë¬¸ì");
 
                           for(int i = 0; i <= data_num; i++){
                               if(m.equalsIgnoreCase(Q_s[i]) && Q_i[i]+1 == q_n){
                                  Q_s[i] = m;
                                  Q_i[i] = q_n; 
-                                 System.out.println(i + "¹øÂ° " +Q_s[i]  + Q_i[i] +"¼ıÀÚ Áõ°¡!!!");
+                                 System.out.println(i + "ë²ˆì§¸ " +Q_s[i]  + Q_i[i] +"ìˆ«ì ì¦ê°€!!!");
                                  continue;
                               }
                               else if(i == data_num && !m.equalsIgnoreCase(Q_s[i])){
                                  Q_s[data_num] = m;
                                  Q_i[data_num] = q_n;    
-                                 System.out.println(i + "¹øÂ° " +Q_s[i]  + Q_i[i]  + "data_num : " + data_num  +" Ãß°¡");
+                                 System.out.println(i + "ë²ˆì§¸ " +Q_s[i]  + Q_i[i]  + "data_num : " + data_num  +" ì¶”ê°€");
                               }
                               else{
                        
-                                 System.out.println(m+"°°Àº¹®ÀÚ ¸øÃ£À½");
+                                 System.out.println(m+"ê°™ì€ë¬¸ì ëª»ì°¾ìŒ");
 
                                  continue;
    
@@ -461,10 +449,10 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
                                               
                          data_num++;
                          System.out.println("==================");
-                         System.out.println(data_num + "    ¹è¿­¿¡ ÀúÀåµÈ Áú¹®¼ö ");
+                         System.out.println(data_num + "    ë°°ì—´ì— ì €ì¥ëœ ì§ˆë¬¸ìˆ˜ ");
                          
                             for(int i = 0; i <data_num; i++){
-                              System.out.println("¹è¿­["+i +"]"+ Q_s[i]);                            
+                              System.out.println("ë°°ì—´["+i +"]"+ Q_s[i]);                            
                             }
                         System.out.println("==================");
    
@@ -478,29 +466,28 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
     }
     
 
-    //·Î±×ÀÎÆĞ³Î
+    //login panel
     class loginPanel extends JPanel {
-        ImageIcon image = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/login.png");//±×¸²ÀÇ À§Ä¡´Â ÇÁ·ÎÁ§Æ® Æú´õ¾È.(srcÆú´õ°¡ º¸ÀÌ´Â°÷)
+        ImageIcon image = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/login.png");
         Image img = image.getImage();
         
        public loginPanel(){
           setLayout(null);
           setSize(300,400);
-            //setBackground(new Color(170, 218, 219));//rgbÄÃ·¯
           na = new JTextField(6);
           na.setBounds(100,275,100,20);
           
-          logbt = new Button("·Î±×ÀÎ"); 
+          logbt = new Button("ë¡œê·¸ì¸"); 
           logbt.setBackground(Color.white);
           logbt.setBounds(210,275,40,20);
-          logbt.setActionCommand("·Î±×ÀÎ");//¹öÆ°´©¸¦½Ã
-          logbt.addActionListener(new MyListenerA());//½ÇÇàµË´Ï´Ù.
+          logbt.setActionCommand("ë¡œê·¸ì¸");
+          logbt.addActionListener(new MyListenerA());
                       
             add(na);
             add(logbt);
        } 
        
-       public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+       public void paintComponent(Graphics g){//ê·¸ë¦¼ì´ë‚˜ ë„í˜•ì„ ë„£ì„ë•Œ ê¸°ë³¸ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” í˜ì¸íŠ¸ì»´í¬ë„ŒíŠ¸
             super.paintComponent(g);
             g.drawImage(img, 0, 0, 300, 400, this);
 
@@ -508,18 +495,18 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
     }
     
   
-    //Áú¹®Ã¤ÆÃ ÆĞ³Î
+    //ì§ˆë¬¸ì±„íŒ… íŒ¨ë„
     class MyPanel extends JPanel {
 
-        ImageIcon image1 = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/»ç¶û.png");//±×¸²ÀÇ À§Ä¡´Â ÇÁ·ÎÁ§Æ® Æú´õ¾È.(srcÆú´õ°¡ º¸ÀÌ´Â°÷)
+        ImageIcon image1 = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/ì‚¬ë‘.png");
         Image img1 = image1.getImage();
-        ImageIcon image2 = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/»ç¶û2.png");
+        ImageIcon image2 = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/ì‚¬ë‘2.png");
         Image img2 = image2.getImage();
-        ImageIcon image3 = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/Áú¹®.png");
+        ImageIcon image3 = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/ì§ˆë¬¸.png");
         Image img3 = image3.getImage();
-        ImageIcon image4 = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/Ã¤ÆÃ.png");
+        ImageIcon image4 = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/ì±„íŒ….png");
         Image img4 = image4.getImage();
-        ImageIcon image5 = new ImageIcon("ÆÀÇÁ·ÎÁ§Æ®/»óÀ§Á¦¸ñ.png");
+        ImageIcon image5 = new ImageIcon("íŒ€í”„ë¡œì íŠ¸/ìƒìœ„ì œëª©.png");
         Image img5 = image5.getImage();
         
         public MyPanel(){
@@ -527,35 +514,29 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
             setBackground(new Color(200, 200, 200));
         }
         
-        public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+        public void paintComponent(Graphics g){
            super.paintComponent(g);
-           g.drawImage(img1, 15, 140, 150, 184, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
-           g.drawImage(img2, 200, 460, 150, 184, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
-           g.drawImage(img3, 110, 130, 400, 200, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
-           g.drawImage(img4, -30, 460, 400, 200, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
-           g.drawImage(img5, 90, 10, 270, 133, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
-           //»çÁøºñÀ² 276 : 338 = 150 : x
+           g.drawImage(img1, 15, 140, 150, 184, this);
+           g.drawImage(img2, 200, 460, 150, 184, this);
+           g.drawImage(img3, 110, 130, 400, 200, this);
+           g.drawImage(img4, -30, 460, 400, 200, this);
+           g.drawImage(img5, 90, 10, 270, 133, this);
         }
      }
     
-    //·Î±×ÀÎ¹öÆ° ÀÔ´Ï´Ù.
+    
     class MyListenerA implements ActionListener{
             
        public void actionPerformed(ActionEvent e){
-          System.out.println("¹öÆ°´­¸² ¤¾¤¾");
           name = na.getText();
           user = name;
-          //TODO Auto-generated method stub
           startf.setVisible(false); 
           f.setTitle(name);
             f.setVisible(true); 
 
        }
     }
-    // ===============================================================================
  
-    // ½ÇÇà ¹æ¹ı 
-    // java MultichatGUIClient ´ëÈ­¸í 
     public static void main(String[] args) {
         
         String name = null; 
@@ -573,7 +554,7 @@ public class MultichatGUIClient_final extends JPanel implements ActionListener {
             name = " "+ia;
 
             if (name.isEmpty()) { 
-                System.out.println("´ëÈ­¸íÀº ÇÑ±ÛÀÚ ÀÌ»ó ÀÔ·ÂÇØ¾ß ÇÕ´Ï´Ù.\n\n");
+                System.out.println("ëŒ€í™”ëª…ì€ í•œê¸€ì ì´ìƒ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤.\n\n");
              } 
         } while (name.isEmpty()); 
 
