@@ -95,22 +95,7 @@ public class SimpleAudioPlayer
 
 	public static void main(String[] args)
 	{
-		/*
-		  We check that there is exactely one command-line
-		  argument.
-		  If not, we display the usage message and exit.
-		*/
-	/*	if (args.length != 1)
-		{
-			printUsageAndExit();
-		}*/
-
-		/*
-		  Now, that we're shure there is an argument, we
-		  take it as the filename of the soundfile
-		  we want to play.
-		*/
-		/*String	strFilename = "no makeup.mp3";
+		
 		File	soundFile = new File(strFilename);*/
 		File	soundFile = new File("no makeup.mp3");
 		/*
