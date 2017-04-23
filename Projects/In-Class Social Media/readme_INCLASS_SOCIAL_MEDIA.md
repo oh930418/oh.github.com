@@ -16,7 +16,7 @@ In-Class Social Media
 
 **EXAMPLE**
 
-![](readme_img/img3.jpg)
+![](readme_img/img3.JPG)
 
 
 ## Execution Window - Professors
