@@ -258,15 +258,8 @@ extends Thread
 
 	
 		out("Press ENTER to start the recording.");
-	/*	try
-		{
-			System.in.read();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-	*/	recorder.start();
+
+		recorder.start();
 		out("Recording...");
 		
 		out("Press ENTER to stop the recording.");
