@@ -29,22 +29,7 @@ public class Test_2 extends JFrame{
 		super.processWindowEvent(arg0);
 	}
 	
-/*	 public void MatrixTime(int delayTime, AudioPlayer ap, int n){
 
-
-	       long saveTime = System.currentTimeMillis();
-	        long currTime = 0;
-			Tp[n].change(n, 1);
-
-
-	       while( currTime - saveTime < delayTime){
-	            currTime = System.currentTimeMillis();
-	        }
-
-	 }
-
-	*/
-	
 	Test_2(){
 		m_P.setLayout(cardLayoutSet);
 
@@ -52,27 +37,14 @@ public class Test_2 extends JFrame{
 		setLayout(new BorderLayout());
 		setTitle("OPIC");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setVisible(true);
-		getContentPane().setPreferredSize( Toolkit.getDefaultToolkit().getScreenSize());   //
-/*		int x = getWidth();
-		int y = getHeight();
-		x+=5;
-		y+=15;S
-		setSize(x, y);*/
-		pack();  //
-	//	setSize(500, 500);
+		getContentPane().setPreferredSize( Toolkit.getDefaultToolkit().getScreenSize());   
+
+		pack();  
 		setResizable(false);
 		setLocation(0, -20);  //
-		/*Point p = new Point(0, 0);
-		SwingUtilities.convertPoirjntToScreen(p, getContentPane());
-		Point l = getLocation();
-		l.x -= p.x;
-		l.y -= p.y;
-		setLocation(l);
-		*/
-		//show();
+
 
 		for(int i = 0; i < MAX; i++){
 			str = i+"";
@@ -81,41 +53,16 @@ public class Test_2 extends JFrame{
 			
 			Tp[i] = new Test_p(i, this.getWidth(), this.getHeight());
 		
-	//		Button btn = new Button(str);
 
-			//btn.setLocation(Tp[i].getWidth()-150, 400);
-			//Tp[i].pn.add(btn);
 			m_P.add(Tp[i].pn, str);
 
 			Tp[i].recorde_btn.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent arg0) {
-					//int n = Integer.parseInt(arg0.getActionCommand());
 					System.out.println(arg0.getActionCommand());
-					//int n = Integer.parseInt(arg0.getActionCommand().substring(6));
 					int n = Integer.parseInt(arg0.getActionCommand());
 
 					Tp[n].change(n, 1);
-					//Tp[n].ct.start();
-					//Tp[n].ct.setPriority(10);
-					
-					//update(null);
-					//				MatrixTime(5000, ap, n);
-				/*	AudioClip a = null;
-					
-					File file = new File("recode"+ n +".wma");
-					try {
-						a = Applet.newAudioClip(file.toURL());
-					} catch (MalformedURLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-		!			
-					a.play();
-				*/	
-					/*
-					AudioPlayer ap = new AudioPlayer(Tp[n], n);
-					ap.play(n);
-*/
+	
 					
 					try {
 						Player p = new Player(new FileInputStream("recorde"+ n +".mp3"));
@@ -145,17 +92,11 @@ public class Test_2 extends JFrame{
 		}
 
 		add(m_P);		
-//		cardLayoutSet.show(m_P, "1");
 		x = this.getWidth();
 		y = this.getHeight();
 		
 		Survey s = new Survey(x, y, m_P, cardLayoutSet, this);
-		//cardLayoutSet.show(m_P, "survey");
-
 		cardLayoutSet.show(m_P, "s1");
-
-
-		//cardLayoutSet.show(m_P, "passW");
 		
 	}
 	public static void main(String[] args) {
