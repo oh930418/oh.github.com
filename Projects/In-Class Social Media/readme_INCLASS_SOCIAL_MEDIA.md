@@ -21,7 +21,6 @@ In-Class Social Media
 
 ## Execution Window - Professors
 *Question boxes disappear when the professor clicks them.*
-
 *Students’ chats are not displayed in professor’s execution window.*
 
 ![](readme_img/img4.jpg)
