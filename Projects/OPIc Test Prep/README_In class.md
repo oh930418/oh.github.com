@@ -7,4 +7,5 @@ Its environment was designed to be as close to the actual test as possible. User
 
 ![](/readme_img/img.jpg)
  “picture 1”
-![](/readme_img/img2.jpg “picture 2”)
+![](/readme_img/img2.jpg)
+“picture 2”
