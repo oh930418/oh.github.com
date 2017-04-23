@@ -36,31 +36,18 @@ public class Test_p extends JFrame{
 		pn.setBackground(new Color(201, 205, 208));
 		int btn_x = (int) (x*0.48);
 		int btn_y = (int) (y*0.59);
-		//btn = new JButton(num+"");
-		//play_btn = new JButton(num+"");
+
 		recorde_btn = new JButton(num+"");
-		
-		/*play_btn.setBorderPainted(false);
-		play_btn.setFocusPainted(false);
-		play_btn.setContentAreaFilled(false);
-		*/
+
 		recorde_btn.setBorderPainted(false);
 		recorde_btn.setFocusPainted(false);
 		recorde_btn.setContentAreaFilled(false);
 		recorde_btn.setForeground(Color.BLACK);
-		//recorde_btn.setVisible(false);
 		fr.add(pn);
 		pn.setLayout(null);
-		
-/*		btn.setBounds(btn_x, btn_y, 50, 50);
-		pn.add(btn);
 
-		play_btn.setBounds(150, 150, 50, 50);
-		pn.add(play_btn);
-		*/
 		recorde_btn.setBounds(btn_x, btn_y, 50, 765);
 		pn.add(recorde_btn);
-	//³ìÀ½
 		
 		
 	
@@ -76,7 +63,6 @@ public class Test_p extends JFrame{
 			}
 	    	ImageIcon image2 = new ImageIcon("JOPIC/JennyOPIc_Mock_Format_Sample.0"+pic+".jpeg");
 	    	img1 = image2.getImage();
-	    	System.out.println("¹Ù²ñ ÀÌ°ÅÀÌ°Å");
 	    	repaint();
 	    	pn.updateUI();
 	    	pn.repaint();
@@ -89,7 +75,6 @@ public class Test_p extends JFrame{
 			}
 			ImageIcon image2 = new ImageIcon("JOPIC/JennyOPIc_Mock_Format_Sample.0"+pic+".jpeg");
 	    	img1 = image2.getImage();
-	    	System.out.println("¹Ù²ñ");
 	    	repaint();
 	    	pn.updateUI();
 	    	pn.repaint();
@@ -102,7 +87,7 @@ public class Test_p extends JFrame{
 			}
 			ImageIcon image2 = new ImageIcon("JOPIC/JennyOPIc_Mock_Format_Sample.0"+pic+".jpeg");
 	    	img1 = image2.getImage();
-	    	System.out.println("¹Ù²ñ");
+	    	System.out.println("ë°”ë€œ");
 	    	repaint();
 	    	pn.updateUI();
 	    	pn.repaint();
@@ -130,10 +115,10 @@ public class Test_p extends JFrame{
 
 	    }
 	    
-	    public void paintComponent(Graphics g){//±×¸²ÀÌ³ª µµÇüÀ» ³ÖÀ»¶§ ±âº»ÀûÀ¸·Î »ç¿ëµÇ´Â ÆäÀÎÆ®ÄÄÆ÷³ÍÆ®
+	    public void paintComponent(Graphics g){
 	       super.paintComponent(g);
 	       
-	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);//(ÀÌ¹ÌÁö, À§Ä¡x, À§Ä¡y, Å©±âx, Å©±ây, this)
+	       g.drawImage(img1, x/2-360, y/2-225, 720, 450, this);
 	     
 	    }
 	 }
@@ -145,7 +130,6 @@ public class Test_p extends JFrame{
 		
 		public void run(){
 			change(1, 1);
-			System.out.println("½º·¹µå ÀÛµ¿");
 		}
 		
 	}	
