@@ -8,13 +8,16 @@ You can play against either a computer or a friend sitting next to you.
 ### **Implemented Algorithm**
 When it is computer’s turn to attack/defense, it first looks for the opponent’s stones consecutively put in a row. If two (or more) groups of same number of stones are found, it is set to check if their ends have the computer’s stone. It will then put its stone next to the group without the computer’s stone next to its end. Here is an example.
 
-![] (readme_img/img1.jpg)
+![](readme_img/img1.jpg)
+
 picture 1
 
 
 As is illustrated in the picture above, let’s say that the two dotted-whites are where the computer (white) can put its stone. In this case, it will put its stone on the lower one, because the upper group of black stones already have a white stone on their right.
 
-![] (readme_img/img2.jpg)
+
+![](readme_img/img2.jpg)
+
 picture 2
 
 The same rule is applied when the empty spot is placed in between the opponent’s (black in the picture above) stones.
