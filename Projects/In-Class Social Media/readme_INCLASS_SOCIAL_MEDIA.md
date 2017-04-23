@@ -7,13 +7,16 @@ In-Class Social Media
 ## Execution Window - Students
 
 **SIGN IN**
-![] (/path/to/img.jpg)
+![](/readme_img/img1.jpg)
 
-**DEFAULT FIELDS**
-![] (/path/to/img.jpg)
+**DEFAULT**
+![](/readme_img/img2.jpg)
+
+**FIELDS**
+![](/readme_img/img3.jpg)
 
 **EXAMPLE**
-![] (/path/to/img.jpg)
+![](/readme_img/img4.jpg)
 
 
 ## Execution Window - Professors
