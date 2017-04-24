@@ -8,6 +8,6 @@ Its environment was designed to be as close to the actual test as possible. User
 
  picture 1
  
-![](OPIcTestPrep/readme_img/img2.jpg)
+![](OPIc_Test_Prep/readme_img/img2.jpg)
 
  picture 2
