@@ -12,11 +12,11 @@ In-Class Social Media
 
 **DEFAULT FIELDS**
 
-![](readme_img/img2.jpg)
+![](readme_img/img2_in_class.jpg)
 
 **EXAMPLE**
 
-![](readme_img/img3.JPG)
+![](readme_img/img3_in_class.JPG)
 
 
 ## Execution Window - Professors
