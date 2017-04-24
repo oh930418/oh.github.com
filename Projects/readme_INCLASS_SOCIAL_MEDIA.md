@@ -8,21 +8,21 @@ In-Class Social Media
 
 **SIGN IN**
 
-![](readme_img/img1.jpg)
+![](readme_img/img1_in_class.jpg)
 
 **DEFAULT FIELDS**
 
-![](readme_img/img2.jpg)
+![](readme_img/img2_in_class.jpg)
 
 **EXAMPLE**
 
-![](readme_img/img3.JPG)
+![](readme_img/img3_in_class.JPG)
 
 
 ## Execution Window - Professors
 *Question boxes disappear when the professor clicks them.*<br>
 *Students’ chats are not displayed in professor’s execution window.*
 
-![](readme_img/img4.jpg)
+![](readme_img/img4_in_class.jpg)
 
 
