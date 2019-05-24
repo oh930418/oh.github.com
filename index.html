@@ -1,1342 +1,1402 @@
 <!doctype html>
 <html>
-   <head>
 
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<head>
 
-   <title>Hwancheol Oh</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+  <title>Hwancheol Oh</title>
 
-   <style type="text/css">
-   @import url(
-   https://fonts.googleapis.com/css?family=Lato:400,700
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,700
 );
-body {
-   background: #fff;
-   font-family: Lato, sans-serif;
-   margin: 0 0 80px;
-}
-a {
-   color: #2ecc71;
-}
-a:focus,
-a:hover {
-   color: #f1c40f;
-   text-decoration: none;
-}
-p {
-   line-height: 1.5;
-   margin: 0;
-}
-p + p {
-   margin-top: 10px;
-}
-h1,
-h2,
-h3,
-h4 {
-   margin-top: 0
-}
-section {
-   margin-top: 30px;
-}
-li {
-   line-height: 1.8;
-   list-style: none;
-}
-li:before {
-   content: "\f052";
-   float: left;
-   font: 13px Octicons;
-   margin-top: 6px;
-   margin-left: -20px;
-   opacity: 0;
-   position: absolute;
-}
-blockquote {
-   border-left: 5px solid #e7e9ec;
-   font-size: 14px;
-}
-em {
-   color: #95a5a6;
-   font-weight: normal;
-   font-style: normal;
-}
-h4 span:first-child {
-   color: #000;
-   font-weight: bold;
-}
-.container {
-   max-width: 750px;
-   padding: 0 30px;
-}
-.col-sm-6 {
-   margin-bottom: 10px;
-}
-.col-sm-12 h4 {
-   margin-top: 12px;
-}
-.col-sm-12 + .col-sm-12 {
-   margin-top: 30px;
-}
-#header {
-   background: #f4f6f6;
-   padding: 50px 0;
-   margin-bottom: 30px;
-}
-#header h2 {
-   color: #95a5a6;
-   font-size: 24px;
-}
-#content h3 {
-   color: #f1c40f;
-   font-size: 26px;
-   margin-top: -4px;
-}
-#content aside {
-   text-align: right;
-   padding-right: 30px;
-}
-#profiles .network {
-   text-transform: capitalize;
-}
-#work .position,
-#volunteer .position {
-   font-weight: bold;
-   margin-bottom: 8px;
-}
-#education .area {
-   font-weight: bold;
-}
-#education .area:before {
-   content: "\f0d7";
-   font: 16px Octicons;
-   margin-right: 6px;
-}
-#education .studyType {
-   margin-left: 25px;
-}
-#awards .summary,
-#publications .summary {
-   margin-top: 8px;
-}
-#publications .website a:before {
-   content: attr(href);
-}
-@media (min-width: 480px) {
-   .strike-through {
-      border-top: 1px solid #f4f6f6;
-      height: 20px;
-      margin-top: 12px;
-      margin-bottom: -2px;
-      position: relative;
-   }
-   .strike-through span,
-   .strike-through a {
+
+    body {
       background: #fff;
+      font-family: Lato, sans-serif;
+      margin: 0 0 80px;
+    }
+
+    a {
+      color: #2ecc71;
+    }
+
+    a:focus,
+    a:hover {
+      color: #f1c40f;
+      text-decoration: none;
+    }
+
+    p {
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    p+p {
+      margin-top: 10px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    li {
+      line-height: 1.8;
+      list-style: none;
+    }
+
+    li:before {
+      content: "\f052";
+      float: left;
+      font: 13px Octicons;
+      margin-top: 6px;
+      margin-left: -20px;
+      opacity: 0.1;
       position: absolute;
-   }
-   .strike-through span:first-child {
-      padding-right: 20px;
-      margin-top: -12px;
-   }
-   .strike-through span + span {
+    }
+
+    blockquote {
+      border-left: 5px solid #e7e9ec;
       font-size: 14px;
-      margin-top: -10px;
-      padding-left: 20px;
-      right: 0;
-   }
-}
-@media (max-width: 768px) {
-   .col-sm-6:last-child {
-      margin-bottom: 0px;
-   }
-   #content aside {
-      margin-bottom: 20px;
-      padding-right: 0;
-      text-align: left;
-   }
-   #publications .website a:before {
-      content: "View publication";
-   }
-}
-@media (max-width: 480px) {
-   h1 {
-      font-size: 26px;
-   }
-   .date {
-      font-size: 14px;
-      margin-bottom: 5px;
-   }
-   .strike-through span:first-child {
-      margin-bottom: 7px;
-   }
-   .strike-through span {
-      display: block;
-   }
-   #header {
+    }
+
+    em {
+      color: #95a5a6;
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h4 span:first-child {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 750px;
+      padding: 0 30px;
+    }
+
+    .col-sm-6 {
       margin-bottom: 10px;
-      padding: 40px 0;
-   }
-   #actions {
+    }
+
+    .col-sm-12 h4 {
+      margin-top: 12px;
+    }
+
+    .col-sm-12+.col-sm-12 {
+      margin-top: 30px;
+    }
+
+    #header {
+      background: #f4f6f6;
+      padding: 50px 0;
+      margin-bottom: 30px;
+    }
+
+    #header h2 {
+      color: #95a5a6;
+      font-size: 24px;
+    }
+
+    #content h3 {
+      color: #f1c40f;
+      font-size: 26px;
+      margin-top: -4px;
+    }
+
+    #content aside {
+      text-align: right;
+      padding-right: 30px;
+    }
+
+    #profiles .network {
+      text-transform: capitalize;
+    }
+
+    #work .position,
+    #volunteer .position {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    #education .area {
+      font-weight: bold;
+    }
+
+    #education .area:before {
+      content: "\f0d7";
+      font: 16px Octicons;
+      margin-right: 6px;
+    }
+
+    #education .studyType {
+      margin-left: 25px;
+    }
+
+    #awards .summary,
+    #publications .summary {
+      margin-top: 8px;
+    }
+
+    #publications .website a:before {
+      content: attr(href);
+    }
+
+    @media (min-width: 480px) {
+      .strike-through {
+        border-top: 1px solid #f4f6f6;
+        height: 20px;
+        margin-top: 12px;
+        margin-bottom: -2px;
+        position: relative;
+      }
+
+      .strike-through span,
+      .strike-through a {
+        background: #fff;
+        position: absolute;
+      }
+
+      .strike-through span:first-child {
+        padding-right: 20px;
+        margin-top: -12px;
+      }
+
+      .strike-through span+span {
+        font-size: 14px;
+        margin-top: -10px;
+        padding-left: 20px;
+        right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .col-sm-6:last-child {
+        margin-bottom: 0px;
+      }
+
+      #content aside {
+        margin-bottom: 20px;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      #publications .website a:before {
+        content: "View publication";
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .date {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .strike-through span:first-child {
+        margin-bottom: 7px;
+      }
+
+      .strike-through span {
+        display: block;
+      }
+
+      #header {
+        margin-bottom: 10px;
+        padding: 40px 0;
+      }
+
+      #actions {
+        display: none;
+      }
+    }
+
+    #container {
+      width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tab {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* Float the list items side by side */
+    .tab li {
+      list-style: none;
+      float: left;
+    }
+
+    /* Style the links inside the list items */
+    .tab li a {
+      display: inline-block;
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px 16px;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
       display: none;
-   }
-}
+      padding: 6px 12px;
+    }
 
-#container {
-  width:960px;
-  margin:0 auto;
-  text-align:center;
-}
-.tab {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-/* Float the list items side by side */
-.tab li {
-  float: left;
-}
-/* Style the links inside the list items */
-.tab li a {
-  display: inline-block;
-  color: #000;
-  text-align: center;
-  text-decoration: none;
-  padding: 14px 16px;
-  font-size: 17px;
-  transition:0.3s;
-}
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-}
-ul.tab li.current{
-  background-color: rgb(241,198,51);
-  color: #222;
-}
-.tabcontent.current {
-  display: block;
-}
+    ul.tab li:before {
+      content: "\f052";
+      float: left;
+      font: 13px Octicons;
+      margin-top: 6px;
+      margin-left: -20px;
+      opacity: 0;
+      position: absolute;
+    }
 
-   </style>
-   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    ul.tab li.current {
+      background-color: rgb(241, 198, 51);
+      color: #222;
+    }
 
-   </head>
-   <body>
+    .tabcontent.current {
+      display: block;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-   <header id="header">
-      <div class="container">
-         <div class="row">
-            <div class="col-sm-9 col-sm-push-3">
-               <h1>
-                  Hwancheol Oh
-               </h1>
-               <h2>
-                  Programmer
-               </h2>
-            </div>
-         </div>
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+          <h1>
+            Hwancheol Oh
+          </h1>
+          <h2>
+            Programmer
+          </h2>
+        </div>
       </div>
-   </header>
-   <div id="content" class="container">
+    </div>
+  </header>
+  <div id="content" class="container">
     <ul class="tab">
-  		<li class="current" data-tab="tab1"><a href="#">Korean</a></li>
-  		<li data-tab="tab2"><a href="#">English</a></li>
+      <li class="current" data-tab="tab1"><a href="#">한국어</a></li>
+      <li data-tab="tab2"><a href="#">English</a></li>
     </ul>
 
     <div id="tab1" class="tabcontent current">
-   <section id="contact" class="row">
-      <aside class="col-sm-3">
-         <h3>연락처</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-6">
-            <strong>Email</strong>
-            <div class="email">oh930418@naver.com</div>
-         </div>
-         <div class="col-sm-6">
-            <strong>Phone</strong>
-            <div class="phone">+82-10-7189-7350</div>
-         </div>
-         <div class="col-sm-6">
-            <strong>github</strong>
-            <div class="website">
-               <a href="https://github.com/oh930418/oh.github.com">https://github.com/oh930418/oh.github.com</a>
-            </div>
-         </div>
-         </div>
-      </div>
-   </section>
-   <section id="about" class="row">
-      <aside class="col-sm-3">
-         <h3>소개</h3>
-      </aside>
-      <div class="col-sm-9">
-         <p>매일 새벽 6시에 피트니스로 함께 하루를 시작하는 프로그래머</p>
-      </div>
-   </section>
-   <section id="profiles" class="row">
-      <aside class="col-sm-3">
-         <h3>프로필</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-            <div class="col-sm-6">
-               <strong class="network">
-                  Facebook
-               </strong>
-               <div class="username">
-                     https://facebook.com/oh930418
-               </div>
-               <br>
-
-               <strong class="network">
-                  Instargram
-               </strong>
-               <div class="username">
-                     https://www.instagram.com/oh930418
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <section id="project experince_KR" class="row">
-      <aside class="col-sm-3">
-         <h3>프로젝트<br> 경험</h3>
-      </aside>
-      <div class="col-sm-9">
-
-
-          <h4>
-              <span>회사 프로젝트</span>
-          </h4>
-          <br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>KB은행 WM 개선 프로젝트 <br>(From Obzen Company)</strong></span>
-                  <span class="date">
-                     November-May 2018
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p><br>한국 금융공학 컨설팅 사의 자산운용컨설팅시스템인 WM(RO-BO ADVISOR) 시스템 개선 프로젝트 <br>Tool: eCube / Language: .Net</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>KT MTO 캠페인 프로젝트<br>(From Obzen Company)</strong></span>
-                  <span class="date">
-                     March-November 2018
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p><br>현재의 고객과 잠재 고객에 대한 정보 자료를 정리, 분석해 마케팅 정보로 사용하는 CRM인 캠페인 프로젝트 <br>Tool: eCube / Language: .Net</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-          <h4>
-              <span>개인 프로젝트</span>
-          </h4>
-          <br>
-
-            <div class="row">
-            <div class="col-sm-12">
-             <h5 class="strike-through">
-                <span><strong>상품명 분석기 (진행중)</strong></span>
-                <span class="date">
-                   May 2018
-                </span>
-             </h5>
-
-             <div class="summary">
-                <p>네이버 데이터랩 API와 Python을 이용한 같은 상품을 어떤 이름으로 등록하는 것이 경쟁력 있을지 비교하는 프로그램. <br>Language: Python</p>
-             </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>기사 크롤링</strong></span>
-                  <span class="date">
-                     May 2018
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>Python을 이용한 신문 사이트에서 특정 검색어를 사용한 기사를 검색 및 기사 내 텍스트 정제 및 분석.<br>Language: Python</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>아일랜드(Game)</strong></span>
-                  <span class="date">
-                     July-August 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>섬에 무작위로 배치된 무기와 방어복, 탈출 도구를 찾아 보트나 헬기를 이용하여 탈출 혹은 최후의 1인이 되어 살아 남는 게임. <br>Tool: Unity / Language: C#</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>모바일 데이터 절약기</strong></span>
-                  <span class="date">
-                     June 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>WIFI 연결 상태로 착각하여 모바일 데이터로 동영상 시청 등의 데이터 낭비를 방지하기 위해 모바일 데이터 사용량이 급증 할 경우 팝업 알람 및 데이터 차단 해주는 어플리케이션. <br>Tool: Android Studio / Language: java</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>모의 OPIc 테스트</strong></span>
-                  <span class="date">
-                     December 2015
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>제 2외국어 학습자를위한 면접 시험 형식의 컴퓨터 기반 구술 시험인 OPIc를 위한 시험 준비 프로그램. 2016년 1월 -2월에 약 300 명의 응시자가 사용함. <br>Tool: Eclipse / Language: java</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-          <h4>
-              <span>대학 프로젝트</span>
-          </h4>
-          <br>
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>빈 좌석 확인 시스템</strong><br>(From GEMS-CRC)</span>
-                  <span class="date">
-                     November-December 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p><br>ATmega와 거리 센서를 사용하여 실제 좌석 사용자 유무를 확인하는 시스템. <br>Tool: AtmelStudio / Language: C</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>부피 측정기</strong></span>
-                  <span class="date">
-                     April-June 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>기준카드와 함께 부피 측정하고하는 물체를 함께 찍은 사진을 openCV를 이용한 이미지 프로세싱으로 물체의 부피를 계산하는 프로그램. <br>Tool: Eclipse / Language: java</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>오목 게임</strong></span>
-                  <span class="date">
-                     April-June 2016
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>오목 알고리즘이 있는 컴퓨터와 오목 대결 프로그램. <br>Tool: Qt / Language: C++</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-          <div class="row">
-          <div class="col-sm-12">
-             <h5 class="strike-through">
-                <span><strong>스마트 램프</strong></span>
-                <span class="date">
-                   September - December 2016
-                </span>
-             </h5>
-
-             <div class="summary">
-                <p>블루투스 연결을 통해 스마트폰과 연결하여 램프 온/오프와 알람설정 및 램프 색상 변경이 가능한 시스템. <br>Tool: Arduino / Language: C</p>
-             </div>
-
-          </div>
-          </div>
-          <br><br>
-
-
-        <div class="row">
-        <div class="col-sm-12">
-           <h5 class="strike-through">
-              <span><strong>학급 소셜 미디어</strong></span>
-              <span class="date">
-                 October-November 2015
-              </span>
-           </h5>
-
-           <div class="summary">
-              <p>수업 중 학생들이 손을 들지 않고 학급 SNS를 통해 질문을 올리는 프로그램. 질문은 다른 학생들이 '좋아요'를 누를 수 있고 그 숫자에 따라 색깔이 변경되어 질문의 중요도를 나타냄. <br>Tool: Eclipse / Language: Java</p>
-           </div>
-
-        </div>
-        </div>
-        <br><br>
-
-
-  </section>
-
-
-  <section id="education" class="row">
-      <aside class="col-sm-3">
-         <h3>교육</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-12">
-            <h4 class="strike-through">
-
-
-
-               <span>강릉원주대학교</span>
-               <span class="date">
-                  March 2012 - February 2018
-               </span>
-            </h4>
-            <br>
-            <div class="area">
-                컴퓨터 과학부
-            </div>
-
-
-
-            <div class="education">
-               <strong><br>GPA</strong>
-            </div>
-            <div class="GPA">
-               4.01/4.50 <br>
-               <strong><br>Honors</strong>
-	       <br>성적 장학생 (2012, 2015, 2016, 2017)
-            </div>
-	    <div class="education">
-               <strong><br>수상</strong>
-            </div>
-            <div class="Awards">
-               대학 팀 코딩 대회 (2015) - 특별상 <br>
-               대학 기초 프로그래밍 대회 (2016) - 우수상
-            </div>
-         </div>
-         </div>
-      </div>
-   </section>
-   <br>
-
-   <section id="Work Experience_KR" class="row">
-      <aside class="col-sm-3">
-         <h3>직장 경험</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-12">
-
-
-             <div class="Work Experience">
-
-            <h5 class="strike-through">
-                <span><strong>오브젠</strong></span>
-                <span class="date">
-                   January 2018 - now
-                </span>
-             </h5>
-
-             <div class="summary">
-                Data 분석 및 CRM 시스템 구축을 위한 솔루션 제공 및 시스템 구축 서비스를 제공하는 회사.
-             </div>
- 	<br><br>
-
-
-             <div class="Work Experience">
-
-            <h5 class="strike-through">
-                <span><strong>강릉 임베디드 소프트웨어 <br>연구센터(GEMS-CRC)</strong></span>
-                <span class="date">
-                   September - November 2017
-                </span>
-             </h5>
-
-             <div class="summary">
-                <br>인턴, 강릉원주대에 있는 임베디드 소프트웨어 연구 센터.
-             </div>
-  <br><br>
-
-            <div class="Work Experience">
-
-           <h5 class="strike-through">
-               <span><strong>대학 튜터</strong></span>
-               <span class="date">
-                  September 2015 - December 2016
-               </span>
-            </h5>
-
-            <div class="summary">
-               강릉원주대학교 컴퓨터과학부에서 학생들의 질문에 답하고 교수의 평가를 도움.
-
-            </div>
-	<br><br>
-
-            <div class="Work Experience">
-
-           <h5 class="strike-through">
-               <span><strong>이센티아</strong></span>
-               <span class="date">
-                  July - August 2015
-               </span>
-            </h5>
-
-            <div class="summary">
-               인턴, 개인 정보 관리 도구 개발을하는 정보 보안 회사.
-            </div>
-	<br><br>
-            <div class="Work Experience">
-
-           <h5 class="strike-through">
-               <span><strong>티칭 조교</strong></span>
-               <span class="date">
-                  January - February 2016
-               </span>
-            </h5>
-
-            <div class="summary">
-               파고다 어학원에서 교재를 모바일 친화적인 형식으로 변환, 전송 및 홍보를 위한 강사 블로그 관리.
-
-            </div>
-
-
-          <div class="Work Experience">
-	<br><br>
-           <h5 class="strike-through">
-               <span><strong>육군</strong></span>
-               <span class="date">
-                  April 2013 - January 2015
-               </span>
-            </h5>
-            </div>
-            <div class="summary">
-               수송중대 소속, 대대 지휘관 운전 병사.<br>우수상 (2013)
-            </div>
-         </div>
-         </div>
-      </div>
-      <br>
-   </section>
-
-
-   <section id="Certificates" class="row">
-      <aside class="col-sm-3">
-         <h3>자격증</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-12">
-            <div class="Certificates">
-           <h5 class="strike-through">
-               <span><strong>정보처리기사</strong></span>
-               <span class="date">
-                  April 2017
-               </span>
-            </h5>
-
-            </div>
-            <div class="fluency">
-               과학기술정보통신부
-            </div>
-          <div class="Certificates">
-	<br><br>
-           <h5 class="strike-through">
-               <span><strong>OCJP (Oracle Certified Java Programmer)</strong></span>
-               <span class="date">
-                  June 2015
-               </span>
-            </h5>
-
-            <div class="fluency">
-               Oracle
-            </div>
-         </div>
-         </div>
-      </div>
-      <br>
-   </section>
-
-
-
-
-   <section id="Skills" class="row">
-      <aside class="col-sm-3">
-         <h3>스킬</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-6">
-            <div class="name">
-               <h4>개발언어</h4>
-            </div>
-            <ul class="keywords">
-               <li>.Net</li>
-               <li>C</li>
-               <li>C#</li>
-               <li>C++</li>
-               <li>Java</li>
-               <li>Python</li>
-            </ul>
-         </div>
-         <div class="col-sm-6">
-            <div class="name">
-               <h4>툴</h4>
-            </div>
-            <ul class="keywords">
-               <li>Linux</li>
-               <li>Unix</li>
-               <li>MySQL</li>
-               <li>Unity</li>
-               <li>Eclipse</li>
-               <li>Visual Studio </li>
-               <li>Android Studio</li>
-               <li>AtmelStudio</li>
-            </ul>
-         </div>
-         </div>
-      </div>
-   </section>
-
-   <section id="languages_KR" class="row">
-      <aside class="col-sm-3">
-         <h3>언어</h3>
-      </aside>
-      <div class="col-sm-9">
-         <div class="row">
-         <div class="col-sm-6">
-            <div class="language">
-               <strong>한국어</strong>
-            </div>
-            <div class="fluency">
-               -원어민
-            </div>
-          <div class="language">
-               <strong>영어</strong>
-            </div>
-            <div class="fluency">
-               -Business fluency (TOEIC 775 - 만료)
-            </div>
-
-          <div class="language">
-
-               <strong>중국어</strong>
-            </div>
-            <div class="fluency">
-               -초보자
-            </div>
-            </div>
-
-
-         </div>
-         </div>
-      </div>
-
-   </section>
-
-
-
-
-   <div id="tab2" class="tabcontent">
-     <section id="contact" class="row">
+      <section id="contact" class="row">
         <aside class="col-sm-3">
-           <h3>Contact</h3>
+          <h3>연락처</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
               <strong>Email</strong>
               <div class="email">oh930418@naver.com</div>
-           </div>
-           <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6">
               <strong>Phone</strong>
               <div class="phone">+82-10-7189-7350</div>
-           </div>
-           <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6">
               <strong>github</strong>
               <div class="website">
-                 <a href="https://github.com/oh930418/oh.github.com">https://github.com/oh930418/oh.github.com</a>
+                <a href="https://github.com/oh930418/oh.github.com">https://github.com/oh930418/oh.github.com</a>
               </div>
-           </div>
-           </div>
-        </div>
-     </section>
-     <section id="about" class="row">
-        <aside class="col-sm-3">
-           <h3>about</h3>
-        </aside>
-        <div class="col-sm-9">
-           <p>A programmer who starts the day with fitness every morning at 6am.</p>
-        </div>
-     </section>
-     <section id="profiles" class="row">
-        <aside class="col-sm-3">
-           <h3>profiles</h3>
-        </aside>
-        <div class="col-sm-9">
-           <div class="row">
-              <div class="col-sm-6">
-                 <strong class="network">
-                    Facebook
-                 </strong>
-                 <div class="username">
-                       https://facebook.com/oh930418
-                 </div>
-              </div>
-           </div>
-        </div>
-     </section>
-
-     <section id="project experince" class="row">
-        <aside class="col-sm-3">
-           <h3>Project Experience</h3>
-        </aside>
-        <div class="col-sm-9">
-
-          <h4>
-              <span>Corporate projects</span>
-          </h4>
-          <br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Improvement of KB Bank WM Projecet <br>(From Obzen Company)</strong></span>
-                  <span class="date">
-                     November-May 2018
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p><br>Participated in WM(RO-BO ADVISOR) system improvement project which is the asset management consulting system of Korea Financial Engineering Consulting Co.  <br>Tool: eCube / Language: .Net</p>
-               </div>
-
             </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>KT MTO Campaign Projecet<br>(From Obzen Company)</strong></span>
-                  <span class="date">
-                     March-November 2018
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p><br>Participate in a CRM (Campaign) project that analyzes information about current customers and potential customers and uses them as marketing information. <br>Tool: eCube / Language: .Net</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-
-          <h4>
-              <span>Individual projects</span>
-          </h4>
-          <br>
-          <div class="row">
-          <div class="col-sm-12">
-             <h5 class="strike-through">
-                <span><strong>Product Name Analyzer (ongoing)</strong></span>
-                <span class="date">
-                   May 2018
-                </span>
-             </h5>
-
-             <div class="summary">
-                <p>A program that compares what name would like to sell with the same product. <br>Language: Python</p>
-             </div>
-
           </div>
+        </div>
+      </section>
+      <section id="about" class="row">
+        <aside class="col-sm-3">
+          <h3>소개</h3>
+        </aside>
+        <div class="col-sm-9">
+          <p>매일 새벽 6시에 피트니스로 함께 하루를 시작하는 프로그래머</p>
+        </div>
+      </section>
+      <section id="profiles" class="row">
+        <aside class="col-sm-3">
+          <h3>프로필</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <strong class="network">
+                Facebook
+              </strong>
+              <div class="username">
+                https://facebook.com/oh930418
+              </div>
+              <br>
+
+              <strong class="network">
+                Instargram
+              </strong>
+              <div class="username">
+                https://www.instagram.com/oh930418
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project experince_KR" class="row">
+        <aside class="col-sm-3">
+          <h3>프로젝트<br> 경험</h3>
+        </aside>
+        <div class="col-sm-9">
+
+
+          <h4>
+            <span>회사 프로젝트</span>
+          </h4>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>KB은행 WM 개선 프로젝트 <br>(From Obzen Company)</strong></span>
+                <span class="date">
+                  November-May 2018
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p><br>한국 금융공학 컨설팅 사의 자산운용컨설팅시스템인 WM(RO-BO ADVISOR) 시스템 개선 프로젝트 <br>Tool: eCube / Language: .Net</p>
+              </div>
+
+            </div>
           </div>
           <br><br>
 
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Article Crawling</strong></span>
-                  <span class="date">
-                     May 2018
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>KT MTO 캠페인 프로젝트<br>(From Obzen Company)</strong></span>
+                <span class="date">
+                  March-November 2018
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p>Retrieve articles using specific search terms on newspaper sites through Python and refine and analyze text within articles. <br>Language: Python</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Island(Game)</strong></span>
-                  <span class="date">
-                     July-August 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>Game of find weapons, armor and escape tools randomly placed on the island, escape using a boat or helicopter, or destroy transport and survive as the last person. <br>Tool: Unity / Language: C#</p>
-               </div>
+              <div class="summary">
+                <p><br>현재의 고객과 잠재 고객에 대한 정보 자료를 정리, 분석해 마케팅 정보로 사용하는 CRM인 캠페인 프로젝트 <br>Tool: eCube / Language: .Net</p>
+              </div>
 
             </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Mobile Data Saver</strong></span>
-                  <span class="date">
-                     June 2017
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>Application to prevent waste of Mobile data. pop-up message and block Mobile data  when mobile data usage surges in order to prevent waste of data such as watching video with mobile data by mistaking it as a WIFI connection <br>Tool: Android Studio / Language: java</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
-
-            <div class="row">
-            <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>OPIc Test Prep</strong></span>
-                  <span class="date">
-                     December 2015
-                  </span>
-               </h5>
-
-               <div class="summary">
-                  <p>A test preparation program for OPIc, a computer-based oral test for second language learners in face-to-face interview format. It was created primarily based on playing/recording audio files function of java, and was used by about 300 test-takers in Jan-Feb, 2016.  <br>Tool: Eclipse / Language: java</p>
-               </div>
-
-            </div>
-            </div>
-            <br><br>
+          </div>
+          <br><br>
 
           <h4>
-              <span>University projects</span>
+            <span>개인 프로젝트</span>
           </h4>
           <br>
 
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Check for empty seats system<br>(From GEMS-CRC)</strong></span>
-                  <span class="date">
-                     November-December 2017
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>상품명 분석기 (진행중)</strong></span>
+                <span class="date">
+                  May 2018
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p><br>Use ATmega and distance sensor to check whether there is an actual user in the seat. <br>Tool: AtmelStudio / Language: C</p>
-               </div>
+              <div class="summary">
+                <p>네이버 데이터랩 API와 Python을 이용한 같은 상품을 어떤 이름으로 등록하는 것이 경쟁력 있을지 비교하는 프로그램. <br>Language: Python</p>
+              </div>
 
             </div>
-            </div>
-            <br><br>
+          </div>
+          <br><br>
 
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Calculate the volume</strong></span>
-                  <span class="date">
-                     April-June 2017
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>기사 크롤링</strong></span>
+                <span class="date">
+                  May 2018
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p>Calculate the volume of an object using image  processing with openCV.  <br>Tool: Eclipse / Language: java</p>
-               </div>
+              <div class="summary">
+                <p>Python을 이용한 신문 사이트에서 특정 검색어를 사용한 기사를 검색 및 기사 내 텍스트 정제 및 분석.<br>Language: Python</p>
+              </div>
 
             </div>
-            </div>
-            <br><br>
+          </div>
+          <br><br>
 
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Omok game program</strong></span>
-                  <span class="date">
-                     April-June 2016
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>아일랜드(Game)</strong></span>
+                <span class="date">
+                  July-August 2017
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p>Omok is an abstract strategy board game, also known as gomoku or five in a row. Computer was given omok algorithm via C++ tool, and enabled to read the on-going game and strategically involved. <br>Tool: Qt / Language: C++</p>
-               </div>
+              <div class="summary">
+                <p>섬에 무작위로 배치된 무기와 방어복, 탈출 도구를 찾아 보트나 헬기를 이용하여 탈출 혹은 최후의 1인이 되어 살아 남는 게임. <br>Tool: Unity / Language: C#</p>
+              </div>
 
             </div>
-            </div>
-            <br><br>
+          </div>
+          <br><br>
 
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>Smart Lamp</strong>Smart Lamp</span>
-                  <span class="date">
-                     September - December 2016
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>모바일 데이터 절약기</strong></span>
+                <span class="date">
+                  June 2017
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p>A tool connecting a bluetooth smartphone with a lamp via Arduino to switch on/off and set an alarm. <br>Tool: Arduino / Language: C</p>
-               </div>
+              <div class="summary">
+                <p>WIFI 연결 상태로 착각하여 모바일 데이터로 동영상 시청 등의 데이터 낭비를 방지하기 위해 모바일 데이터 사용량이 급증 할 경우 팝업 알람 및 데이터 차단 해주는 어플리케이션. <br>Tool: Android Studio / Language: java</p>
+              </div>
 
             </div>
-            </div>
-            <br><br>
+          </div>
+          <br><br>
 
-
-            <div class="row">
+          <div class="row">
             <div class="col-sm-12">
-               <h5 class="strike-through">
-                  <span><strong>In-Class Social Media</strong>In-Class Social Media</span>
-                  <span class="date">
-                     October-November 2015
-                  </span>
-               </h5>
+              <h5 class="strike-through">
+                <span><strong>모의 OPIc 테스트</strong></span>
+                <span class="date">
+                  December 2015
+                </span>
+              </h5>
 
-               <div class="summary">
-                  <p>"Don't raise your hand! Just like!" <br>An in-class social medium where students can anonymously raise questions without having to interrupt class. Questions are shown in a question box on individual computer screens and can be liked by other students, whose color changes as the number of likes increases. Java was used. <br>Tool: Eclipse / Language: Java</p>
-               </div>
+              <div class="summary">
+                <p>제 2외국어 학습자를위한 면접 시험 형식의 컴퓨터 기반 구술 시험인 OPIc를 위한 시험 준비 프로그램. 2016년 1월 -2월에 약 300 명의 응시자가 사용함. <br>Tool: Eclipse / Language: java</p>
+              </div>
 
             </div>
+          </div>
+          <br><br>
+
+          <h4>
+            <span>대학 프로젝트</span>
+          </h4>
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>빈 좌석 확인 시스템</strong><br>(From GEMS-CRC)</span>
+                <span class="date">
+                  November-December 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p><br>ATmega와 거리 센서를 사용하여 실제 좌석 사용자 유무를 확인하는 시스템. <br>Tool: AtmelStudio / Language: C</p>
+              </div>
+
             </div>
-            <br>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>부피 측정기</strong></span>
+                <span class="date">
+                  April-June 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>기준카드와 함께 부피 측정하고하는 물체를 함께 찍은 사진을 openCV를 이용한 이미지 프로세싱으로 물체의 부피를 계산하는 프로그램. <br>Tool: Eclipse / Language: java</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>오목 게임</strong></span>
+                <span class="date">
+                  April-June 2016
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>오목 알고리즘이 있는 컴퓨터와 오목 대결 프로그램. <br>Tool: Qt / Language: C++</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>스마트 램프</strong></span>
+                <span class="date">
+                  September - December 2016
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>블루투스 연결을 통해 스마트폰과 연결하여 램프 온/오프와 알람설정 및 램프 색상 변경이 가능한 시스템. <br>Tool: Arduino / Language: C</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
 
 
-     </section>
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>학급 소셜 미디어</strong></span>
+                <span class="date">
+                  October-November 2015
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>수업 중 학생들이 손을 들지 않고 학급 SNS를 통해 질문을 올리는 프로그램. 질문은 다른 학생들이 '좋아요'를 누를 수 있고 그 숫자에 따라 색깔이 변경되어 질문의 중요도를 나타냄. <br>Tool: Eclipse / Language: Java</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
 
 
-     <section id="education" class="row">
+      </section>
+
+
+      <section id="education" class="row">
         <aside class="col-sm-3">
-           <h3>Education</h3>
+          <h3>교육</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12">
               <h4 class="strike-through">
 
 
 
-                 <span>Gangneung-Wonju National University</span>
-                 <span class="date">
-                    March 2012 - February 2018
-                 </span>
+                <span>강릉원주대학교</span>
+                <span class="date">
+                  March 2012 - February 2018
+                </span>
               </h4>
               <br>
               <div class="area">
-                  Computer Science
+                컴퓨터 과학부
               </div>
 
 
 
               <div class="education">
-                 <strong><br>GPA</strong>
+                <strong><br>GPA</strong>
               </div>
               <div class="GPA">
-                 4.01/4.50 <br>
-                 <strong><br>Honors</strong>
-           <br>Dean's list (2012, 2015, 2016, 2017)
+                4.01/4.50 <br>
+                <strong><br>Honors</strong>
+                <br>성적 장학생 (2012, 2015, 2016, 2017)
               </div>
-        <div class="education">
-                 <strong><br>Awards</strong>
+              <div class="education">
+                <strong><br>수상</strong>
               </div>
               <div class="Awards">
-                 Collegiate Team Coding Contest (2015) - Special award <br>
-                 Collegiate Basic Programming Contest (2016) - Second prize
+                대학 팀 코딩 대회 (2015) - 특별상 <br>
+                대학 기초 프로그래밍 대회 (2016) - 우수상
               </div>
-           </div>
-           </div>
+            </div>
+          </div>
         </div>
-     </section>
-     <br>
+      </section>
+      <br>
 
-     <section id="Work Experience" class="row">
+      <section id="Work Experience_KR" class="row">
         <aside class="col-sm-3">
-           <h3>Work Experience</h3>
+          <h3>직장 경험</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12">
 
 
-               <div class="Work Experience">
+              <div class="Work Experience">
 
+                <h5 class="strike-through">
+                  <span><strong>오브젠</strong></span>
+                  <span class="date">
+                    January 2018 - now
+                  </span>
+                </h5>
+
+                <div class="summary">
+                  Data 분석 및 CRM 시스템 구축을 위한 솔루션 제공 및 시스템 구축 서비스를 제공하는 회사.
+                </div>
+                <br><br>
+
+
+                <div class="Work Experience">
+
+                  <h5 class="strike-through">
+                    <span><strong>강릉 임베디드 소프트웨어 <br>연구센터(GEMS-CRC)</strong></span>
+                    <span class="date">
+                      September - November 2017
+                    </span>
+                  </h5>
+
+                  <div class="summary">
+                    <br>인턴, 강릉원주대에 있는 임베디드 소프트웨어 연구 센터.
+                  </div>
+                  <br><br>
+
+                  <div class="Work Experience">
+
+                    <h5 class="strike-through">
+                      <span><strong>대학 튜터</strong></span>
+                      <span class="date">
+                        September 2015 - December 2016
+                      </span>
+                    </h5>
+
+                    <div class="summary">
+                      강릉원주대학교 컴퓨터과학부에서 학생들의 질문에 답하고 교수의 평가를 도움.
+
+                    </div>
+                    <br><br>
+
+                    <div class="Work Experience">
+
+                      <h5 class="strike-through">
+                        <span><strong>이센티아</strong></span>
+                        <span class="date">
+                          July - August 2015
+                        </span>
+                      </h5>
+
+                      <div class="summary">
+                        인턴, 개인 정보 관리 도구 개발을하는 정보 보안 회사.
+                      </div>
+                      <br><br>
+                      <div class="Work Experience">
+
+                        <h5 class="strike-through">
+                          <span><strong>티칭 조교</strong></span>
+                          <span class="date">
+                            January - February 2016
+                          </span>
+                        </h5>
+
+                        <div class="summary">
+                          파고다 어학원에서 교재를 모바일 친화적인 형식으로 변환, 전송 및 홍보를 위한 강사 블로그 관리.
+
+                        </div>
+
+
+                        <div class="Work Experience">
+                          <br><br>
+                          <h5 class="strike-through">
+                            <span><strong>육군</strong></span>
+                            <span class="date">
+                              April 2013 - January 2015
+                            </span>
+                          </h5>
+                        </div>
+                        <div class="summary">
+                          수송중대 소속, 대대 지휘관 운전 병사.<br>우수상 (2013)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+      </section>
+
+
+      <section id="Certificates" class="row">
+        <aside class="col-sm-3">
+          <h3>자격증</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="Certificates">
+                <h5 class="strike-through">
+                  <span><strong>정보처리기사</strong></span>
+                  <span class="date">
+                    April 2017
+                  </span>
+                </h5>
+
+              </div>
+              <div class="fluency">
+                과학기술정보통신부
+              </div>
+              <div class="Certificates">
+                <br><br>
+                <h5 class="strike-through">
+                  <span><strong>OCJP (Oracle Certified Java Programmer)</strong></span>
+                  <span class="date">
+                    June 2015
+                  </span>
+                </h5>
+
+                <div class="fluency">
+                  Oracle
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+      </section>
+
+
+
+
+      <section id="Skills" class="row">
+        <aside class="col-sm-3">
+          <h3>스킬</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="name">
+                <h4>개발언어</h4>
+              </div>
+              <ul class="keywords">
+                <li>.Net</li>
+                <li>C</li>
+                <li>C#</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <div class="name">
+                <h4>툴</h4>
+              </div>
+              <ul class="keywords">
+                <li>Linux</li>
+                <li>Unix</li>
+                <li>MySQL</li>
+                <li>Unity</li>
+                <li>Eclipse</li>
+                <li>Visual Studio </li>
+                <li>Android Studio</li>
+                <li>AtmelStudio</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="languages_KR" class="row">
+        <aside class="col-sm-3">
+          <h3>언어</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="language">
+                <strong>한국어</strong>
+              </div>
+              <div class="fluency">
+                -원어민
+              </div>
+              <div class="language">
+                <strong>영어</strong>
+              </div>
+              <div class="fluency">
+                -Business fluency (TOEIC 775 - 만료)
+              </div>
+
+              <div class="language">
+
+                <strong>중국어</strong>
+              </div>
+              <div class="fluency">
+                -초보자
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+    </div>
+
+    </section>
+
+
+
+
+    <div id="tab2" class="tabcontent">
+      <section id="contact" class="row">
+        <aside class="col-sm-3">
+          <h3>Contact</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <strong>Email</strong>
+              <div class="email">oh930418@naver.com</div>
+            </div>
+            <div class="col-sm-6">
+              <strong>Phone</strong>
+              <div class="phone">+82-10-7189-7350</div>
+            </div>
+            <div class="col-sm-6">
+              <strong>github</strong>
+              <div class="website">
+                <a href="https://github.com/oh930418/oh.github.com">https://github.com/oh930418/oh.github.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="row">
+        <aside class="col-sm-3">
+          <h3>about</h3>
+        </aside>
+        <div class="col-sm-9">
+          <p>A programmer who starts the day with fitness every morning at 6am.</p>
+        </div>
+      </section>
+      <section id="profiles" class="row">
+        <aside class="col-sm-3">
+          <h3>profiles</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <strong class="network">
+                Facebook
+              </strong>
+              <div class="username">
+                https://facebook.com/oh930418
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project experince" class="row">
+        <aside class="col-sm-3">
+          <h3>Project Experience</h3>
+        </aside>
+        <div class="col-sm-9">
+
+          <h4>
+            <span>Corporate projects</span>
+          </h4>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-12">
               <h5 class="strike-through">
+                <span><strong>Improvement of KB Bank WM Projecet <br>(From Obzen Company)</strong></span>
+                <span class="date">
+                  November-May 2018
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p><br>Participated in WM(RO-BO ADVISOR) system improvement project which is the asset management consulting system of Korea Financial Engineering Consulting Co. <br>Tool: eCube / Language: .Net</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>KT MTO Campaign Projecet<br>(From Obzen Company)</strong></span>
+                <span class="date">
+                  March-November 2018
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p><br>Participate in a CRM (Campaign) project that analyzes information about current customers and potential customers and uses them as marketing information. <br>Tool: eCube / Language: .Net</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+
+          <h4>
+            <span>Individual projects</span>
+          </h4>
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Product Name Analyzer (ongoing)</strong></span>
+                <span class="date">
+                  May 2018
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>A program that compares what name would like to sell with the same product. <br>Language: Python</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Article Crawling</strong></span>
+                <span class="date">
+                  May 2018
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>Retrieve articles using specific search terms on newspaper sites through Python and refine and analyze text within articles. <br>Language: Python</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Island(Game)</strong></span>
+                <span class="date">
+                  July-August 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>Game of find weapons, armor and escape tools randomly placed on the island, escape using a boat or helicopter, or destroy transport and survive as the last person. <br>Tool: Unity / Language: C#</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Mobile Data Saver</strong></span>
+                <span class="date">
+                  June 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>Application to prevent waste of Mobile data. pop-up message and block Mobile data when mobile data usage surges in order to prevent waste of data such as watching video with mobile data by mistaking it as a WIFI connection
+                  <br>Tool: Android Studio / Language: java</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>OPIc Test Prep</strong></span>
+                <span class="date">
+                  December 2015
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>A test preparation program for OPIc, a computer-based oral test for second language learners in face-to-face interview format. It was created primarily based on playing/recording audio files function of java, and was used by about
+                  300 test-takers in Jan-Feb, 2016. <br>Tool: Eclipse / Language: java</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <h4>
+            <span>University projects</span>
+          </h4>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Check for empty seats system<br>(From GEMS-CRC)</strong></span>
+                <span class="date">
+                  November-December 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p><br>Use ATmega and distance sensor to check whether there is an actual user in the seat. <br>Tool: AtmelStudio / Language: C</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Calculate the volume</strong></span>
+                <span class="date">
+                  April-June 2017
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>Calculate the volume of an object using image processing with openCV. <br>Tool: Eclipse / Language: java</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Omok game program</strong></span>
+                <span class="date">
+                  April-June 2016
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>Omok is an abstract strategy board game, also known as gomoku or five in a row. Computer was given omok algorithm via C++ tool, and enabled to read the on-going game and strategically involved. <br>Tool: Qt / Language: C++</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>Smart Lamp</strong>Smart Lamp</span>
+                <span class="date">
+                  September - December 2016
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>A tool connecting a bluetooth smartphone with a lamp via Arduino to switch on/off and set an alarm. <br>Tool: Arduino / Language: C</p>
+              </div>
+
+            </div>
+          </div>
+          <br><br>
+
+
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="strike-through">
+                <span><strong>In-Class Social Media</strong>In-Class Social Media</span>
+                <span class="date">
+                  October-November 2015
+                </span>
+              </h5>
+
+              <div class="summary">
+                <p>"Don't raise your hand! Just like!" <br>An in-class social medium where students can anonymously raise questions without having to interrupt class. Questions are shown in a question box on individual computer screens and can be
+                  liked by other students, whose color changes as the number of likes increases. Java was used. <br>Tool: Eclipse / Language: Java</p>
+              </div>
+
+            </div>
+          </div>
+          <br>
+
+
+      </section>
+
+
+      <section id="education" class="row">
+        <aside class="col-sm-3">
+          <h3>Education</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="strike-through">
+
+
+
+                <span>Gangneung-Wonju National University</span>
+                <span class="date">
+                  March 2012 - February 2018
+                </span>
+              </h4>
+              <br>
+              <div class="area">
+                Computer Science
+              </div>
+
+
+
+              <div class="education">
+                <strong><br>GPA</strong>
+              </div>
+              <div class="GPA">
+                4.01/4.50 <br>
+                <strong><br>Honors</strong>
+                <br>Dean's list (2012, 2015, 2016, 2017)
+              </div>
+              <div class="education">
+                <strong><br>Awards</strong>
+              </div>
+              <div class="Awards">
+                Collegiate Team Coding Contest (2015) - Special award <br>
+                Collegiate Basic Programming Contest (2016) - Second prize
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br>
+
+      <section id="Work Experience" class="row">
+        <aside class="col-sm-3">
+          <h3>Work Experience</h3>
+        </aside>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-12">
+
+
+              <div class="Work Experience">
+
+                <h5 class="strike-through">
                   <span><strong>Obzen</strong></span>
                   <span class="date">
-                     January 2018 - now
+                    January 2018 - now
                   </span>
-               </h5>
+                </h5>
 
-               <div class="summary">
+                <div class="summary">
                   Obzen is an Providing solutions and system building services for data analysis and CRM system construction.
-               </div>
-     <br><br>
+                </div>
+                <br><br>
 
 
-               <div class="Work Experience">
+                <div class="Work Experience">
 
-              <h5 class="strike-through">
-                  <span><strong>Gangwon Embedded Software <br>Research Center(GEMS-CRC)</strong></span>
-                  <span class="date">
-                     September - November 2017
-                  </span>
-               </h5>
+                  <h5 class="strike-through">
+                    <span><strong>Gangwon Embedded Software <br>Research Center(GEMS-CRC)</strong></span>
+                    <span class="date">
+                      September - November 2017
+                    </span>
+                  </h5>
 
-               <div class="summary">
-                  <br>Intern, Embedded Software Research Center in Gangneung-Wonju University.
-               </div>
-     <br><br>
+                  <div class="summary">
+                    <br>Intern, Embedded Software Research Center in Gangneung-Wonju University.
+                  </div>
+                  <br><br>
 
-              <div class="Work Experience">
+                  <div class="Work Experience">
 
-             <h5 class="strike-through">
-                 <span><strong>College Tutor</strong></span>
-                 <span class="date">
-                    September 2015 - December 2016
-                 </span>
-              </h5>
+                    <h5 class="strike-through">
+                      <span><strong>College Tutor</strong></span>
+                      <span class="date">
+                        September 2015 - December 2016
+                      </span>
+                    </h5>
 
-              <div class="summary">
-                 Computer Science Department, Gangneung-Wonju National University.<br>Respond to students' questions and assist professors with student evaluation
+                    <div class="summary">
+                      Computer Science Department, Gangneung-Wonju National University.<br>Respond to students' questions and assist professors with student evaluation
 
-              </div>
-     <br><br>
+                    </div>
+                    <br><br>
 
-              <div class="Work Experience">
+                    <div class="Work Experience">
 
-             <h5 class="strike-through">
-                 <span><strong>Issentia</strong></span>
-                 <span class="date">
-                    July - August 2015
-                 </span>
-              </h5>
+                      <h5 class="strike-through">
+                        <span><strong>Issentia</strong></span>
+                        <span class="date">
+                          July - August 2015
+                        </span>
+                      </h5>
 
-              <div class="summary">
-                 Intern, In charge of a team project to develop a personal information management tool. Issentia is an information security company based in Seoul.
-              </div>
-     <br><br>
-              <div class="Work Experience">
+                      <div class="summary">
+                        Intern, In charge of a team project to develop a personal information management tool. Issentia is an information security company based in Seoul.
+                      </div>
+                      <br><br>
+                      <div class="Work Experience">
 
-             <h5 class="strike-through">
-                 <span><strong>Teaching Assistant</strong></span>
-                 <span class="date">
-                    January - February 2016
-                 </span>
-              </h5>
+                        <h5 class="strike-through">
+                          <span><strong>Teaching Assistant</strong></span>
+                          <span class="date">
+                            January - February 2016
+                          </span>
+                        </h5>
 
-              <div class="summary">
-                 Pagoda Language Academy, Seoul, Korea.<br>Convert teaching materials into mobile-friendly format and send them to students via mobile messenger.<br>Manage the lecturer’s blog for public relations.
+                        <div class="summary">
+                          Pagoda Language Academy, Seoul, Korea.<br>Convert teaching materials into mobile-friendly format and send them to students via mobile messenger.<br>Manage the lecturer’s blog for public relations.
 
-              </div>
-
-
-            <div class="Work Experience">
-     <br><br>
-             <h5 class="strike-through">
-                 <span><strong>Military Service</strong></span>
-                 <span class="date">
-                    April 2013 - January 2015
-                 </span>
-              </h5>
-              </div>
-              <div class="summary">
-                 Transportation unit, Driving soldier for the battalion commander.<br>Excellence Award (2013)
-              </div>
-           </div>
-           </div>
-        </div>
-        <br>
-     </section>
+                        </div>
 
 
+                        <div class="Work Experience">
+                          <br><br>
+                          <h5 class="strike-through">
+                            <span><strong>Military Service</strong></span>
+                            <span class="date">
+                              April 2013 - January 2015
+                            </span>
+                          </h5>
+                        </div>
+                        <div class="summary">
+                          Transportation unit, Driving soldier for the battalion commander.<br>Excellence Award (2013)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+      </section>
 
 
-     <section id="Certificates" class="row">
+
+
+      <section id="Certificates" class="row">
         <aside class="col-sm-3">
-           <h3>Certificates</h3>
+          <h3>Certificates</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12">
               <div class="Certificates">
-             <h5 class="strike-through">
-                 <span><strong>Engineer Information Processing</strong></span>
-                 <span class="date">
+                <h5 class="strike-through">
+                  <span><strong>Engineer Information Processing</strong></span>
+                  <span class="date">
                     April 2017
-                 </span>
-              </h5>
+                  </span>
+                </h5>
 
               </div>
               <div class="fluency">
-                 Ministry of Science, ICT and Future Planning
+                Ministry of Science, ICT and Future Planning
               </div>
-            <div class="Certificates">
-     <br><br>
-             <h5 class="strike-through">
-                 <span><strong>OCJP (Oracle Certified Java Programmer)</strong></span>
-                 <span class="date">
+              <div class="Certificates">
+                <br><br>
+                <h5 class="strike-through">
+                  <span><strong>OCJP (Oracle Certified Java Programmer)</strong></span>
+                  <span class="date">
                     June 2015
-                 </span>
-              </h5>
+                  </span>
+                </h5>
 
-              <div class="fluency">
-                 Oracle
+                <div class="fluency">
+                  Oracle
+                </div>
               </div>
-           </div>
-           </div>
-        </div>
-        <br>
-     </section>
+            </div>
+          </div>
+          <br>
+      </section>
 
 
 
 
-     <section id="skills" class="row">
+      <section id="skills" class="row">
         <aside class="col-sm-3">
-           <h3>Skills</h3>
+          <h3>Skills</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
               <div class="name">
-                 <h4>Development</h4>
+                <h4>Development</h4>
               </div>
               <ul class="keywords">
-                 <li>.Net</li>
-                 <li>C</li>
-                 <li>C#</li>
-                 <li>C++</li>
-                 <li>Java</li>
-                 <li>Python</li>
+                <li>.Net</li>
+                <li>C</li>
+                <li>C#</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
               </ul>
-           </div>
-           <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6">
               <div class="name">
-                 <h4>Tool</h4>
+                <h4>Tool</h4>
               </div>
               <ul class="keywords">
-                 <li>Linux</li>
-                 <li>Unix</li>
-                 <li>MySQL</li>
+                <li>Linux</li>
+                <li>Unix</li>
+                <li>MySQL</li>
               </ul>
-           </div>
-           </div>
+            </div>
+          </div>
         </div>
-     </section>
+      </section>
 
-     <section id="languages" class="row">
+      <section id="languages" class="row">
         <aside class="col-sm-3">
-           <h3>Languages</h3>
+          <h3>Languages</h3>
         </aside>
         <div class="col-sm-9">
-           <div class="row">
-           <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
               <div class="language">
-                 <strong>Korean</strong>
+                <strong>Korean</strong>
               </div>
               <div class="fluency">
-                 -Native speaker
+                -Native speaker
               </div>
-            <div class="language">
-                 <strong>English</strong>
-              </div>
-              <div class="fluency">
-                 -Business fluency (TOEIC 775 - Expired)
-              </div>
-
-            <div class="language">
-
-                 <strong>Chinese</strong>
+              <div class="language">
+                <strong>English</strong>
               </div>
               <div class="fluency">
-                 -Beginner
-              </div>
+                -Business fluency (TOEIC 775 - Expired)
               </div>
 
+              <div class="language">
 
-           </div>
-           </div>
+                <strong>Chinese</strong>
+              </div>
+              <div class="fluency">
+                -Beginner
+              </div>
+            </div>
+
+
+          </div>
         </div>
+    </div>
 
-     </section>
+    </section>
 
-     </div>
+  </div>
 
-   </div>
+  </div>
   </div>
 
 
@@ -1345,17 +1405,18 @@ ul.tab li.current{
 
 
 
-   <script>
- 		$(function() {
- 			$('ul.tab li').click(function() {
- 				var activeTab = $(this).attr('data-tab');
- 				$('ul.tab li').removeClass('current');
- 				$('.tabcontent').removeClass('current');
- 				$(this).addClass('current');
- 				$('#' + activeTab).addClass('current');
- 			})
- 	  });
- 	</script>
+  <script>
+    $(function() {
+      $('ul.tab li').click(function() {
+        var activeTab = $(this).attr('data-tab');
+        $('ul.tab li').removeClass('current');
+        $('.tabcontent').removeClass('current');
+        $(this).addClass('current');
+        $('#' + activeTab).addClass('current');
+      })
+    });
+  </script>
 
-  </body>
+</body>
+
 </html>
